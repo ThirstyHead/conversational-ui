@@ -37,7 +37,7 @@ Just as GUIs have evolved from tabbing around graphical elements with a keyboard
 
 Conversational UIs will require Speech-to-Text, tonal analysis, and eventually sentiment analysis to detect sarcasm, irony, etc.
 
-Chinese for tonal analysis
+Chinese for tonal analysis (e.g. Mother/Horse)
 
 Sarcasm will be especially tough, because you say the opposite of what you actually mean, and expect the listener to reverse the meaning of your words based on your tone of voice or the context of the conversation.
 
@@ -51,8 +51,47 @@ So, why is Speech-to-Text asymetrically harder than Text-to-Speech?
 
 Parsing is harder
 Accents
+Synonyms / Slang - different words that mean the same thing
 Homonyms - words that have the same pronunciation, but different meanings
-Synonyms - different words that mean the same thing
+
+
+Parsing: We talk in a continuous stream. Rather. Than. Pausing. Between. Each. Word.
+
+And how about singing?
+
+And how about sentence fragments?
+
+Accents: India has over 1,000 spoken languages. The US has English (although spanish projections), but several major regional dialects.
+
+Midwest
+Eastern
+Southern
+Northern (Canadian)
+
+Synonyms: In addition to regional pronunciations, they use different words for the same thing.
+
+Soda / Pop
+(In atlanta, everything is Coke)
+
+Sandwich
+Hero
+Hoagie
+Submarine sandwich
+Poor boy
+
+And this is all in the same country, right? Don't get me started with pants and knickers.
+
+So, yes -- english is a hot mess. An ambiguous, hot mess.
+
+But wait, there's more!
+
+How about homonyms -- words that sound the same, but mean completely differnet things. 
+
+
+
+
+
+
 
 
 

@@ -3,18 +3,89 @@
 <html>
     <head>
         <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
-        <link rel="stylesheet" href="bower_components/reveal.js/css/theme/white.css">
+        <link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
     </head>
     <body>
         <div class="reveal">
             <div class="slides">
-                <section>Slide 1</section>
-                <section>Slide 2</section>
+                <section>
+                  <h1>Conversational UIs</h1>
+                  <h2>Talking to Siri, Alexa, and Your Web Browser</h2>
+                </section>
+
+                <section>
+                  <h2>Apple video</h2>
+                  <aside class="notes">
+                    Let me play you a quick video that Apple has released promoting their conversational UI.
+                  </aside>
+                </section>
+
+                <section>
+                  <p>Did you notice anything strange?</p>
+                  <p class="fragment">Like, that it was released in 1987?</p>
+                  <aside class="notes">
+                    Did you notice anything strange about it? Like, the fact that it was released in 1987?
+                  </aside>
+                </section>
+
+                <section>
+                  <h2>What is a Conversational UI?</h2>
+                  <aside class="notes">
+                    "Conversational UI" is a fairly broad, poorly defined term.
+                  </aside>
+                </section>
+
+                <section>
+                  <h2>Wargames</h2>
+                  <aside class="notes">
+                    Some folks think it means this: (An image from the movie "Wargames" asking, "Do you want to play a game?")
+                  </aside>
+                </section>
+
+                <section>
+                  <h2>Text-to-Speech</h2>
+                  <p>Speech synthesis</p>
+                  <aside class="notes">
+                    While that's pretty cool (by 1983 standards),  it is really just typing and text-to-speech, right?
+                  </aside>
+                </section>
+
+                <section>
+                  <h2>T2S Demo</h2>
+                  <aside class="notes">
+                    Live Demonstration of Text-to-Speech
+                  </aside>
+                </section>
+
+                <section>
+                  <h2>Libby Video</h2>
+                  <aside class="notes">
+                    Video Demonstration of Text-to-Speech
+                  </aside>
+                </section>
+
+
+
             </div>
         </div>
         <script src="bower_components/reveal.js/js/reveal.js"></script>
         <script>
-            Reveal.initialize();
+            Reveal.initialize({
+              // Display controls in the bottom right corner
+              controls: false,
+
+              // Display a presentation progress bar
+              progress: false,
+
+              // Push each slide change to the browser history
+              history: true,
+
+              // Transition style
+              transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+              // Flags if speaker notes should be visible to all viewers
+              showNotes: true
+            });
         </script>
     </body>
 </html>

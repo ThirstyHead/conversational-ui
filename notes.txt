@@ -47,7 +47,19 @@ Speech-to-text is devilishly difficult, and currently requires either cloud acce
 
 Dragon naturally speak
 
-So, why is Speech-to-Text asymetrically harder than Text-to-Speech?
+So, why is Speech-to-Text asymmetrically harder than Text-to-Speech?
+
+
+
+
+
+
+
+
+
+
+
+
 
 Parsing is harder
 Accents

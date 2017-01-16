@@ -4,13 +4,95 @@
     <head>
         <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
         <link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
+
+        <style>
+          .reveal .slides section h2 {
+            text-transform: none;
+          }
+
+          .reveal .slides section pre {
+            color: white;
+            background-color: black;
+          }
+
+          .reveal .slides section button {
+            font-size: 2em;
+          }
+
+          .reveal .slides section h2.shadow {
+            text-shadow: 3px 3px 3px #000;
+            background: #ccc;
+            }
+
+          .banner {
+            position:fixed;
+            bottom:50px;
+            background-color: #ccc;
+            height: 250px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+          }
+
+          .banner .title {
+            justify-content: flex-start;
+            font-size: 1em;
+            text-align: left;
+            padding: 0.5em;
+          }
+
+          .banner .title h1 {
+            justify-content: flex-start;
+            font-size: 1.5em;
+            text-transform: none;
+            font-weight: bold;
+          }
+
+          .banner .title h2 {
+            justify-content: flex-start;
+            font-size: 1em;
+            text-transform: none;
+            font-style: italic;
+          }
+
+
+          .banner .bio {
+            justify-content: flex-end;
+            align-self: flex-end;
+            font-size: 0.5em;
+            text-align: right;
+            padding: 0.5em;
+          }
+
+          .banner .bio a{
+            color: #222;
+          }
+        </style>
+
+        <script type="text/javascript">
+          function sayHello(){
+            var msg = new SpeechSynthesisUtterance('Hello World');
+            window.speechSynthesis.speak(msg);
+          }
+        </script>
     </head>
     <body>
         <div class="reveal">
             <div class="slides">
-                <section>
-                  <h1>Conversational UIs</h1>
-                  <h2>Talking to Siri, Alexa, and Your Web Browser</h2>
+                <section data-background-image="img/conversation-799448_1280.png"
+                         data-background-color="#ffffff">
+                  <div class="banner">
+                    <div class="title">
+                      <h1>Conversational UIs</h1>
+                      <h2>Talking to Siri, Alexa, and Your Web Browser</h2>
+                    </div>
+                    <div class="bio">
+                      Scott Davis <br>
+                      <a href="mailto:sdavis@thoughtworks.com">sdavis@thoughtworks.com</a> <br>
+                      <a href="https://twitter.com/scottdavis99?lang=en">@scottdavis99</a>
+                    </div>
+                  </div>
                 </section>
 
                 <section>
@@ -28,338 +110,135 @@
                 </section>
 
                 <section>
-                  <h2>Article</h2>
+                  <a href="https://backchannel.com/voice-is-the-next-big-platform-and-alexa-will-own-it-c2cf13fab911#.a81t7r5cb"><img src="img/backchannel-voice-is-big.png" alt=""></a>
                   <aside class="notes">
-                    Article on Conversational UI
+                    Article on backchannel.com: "Voice Is the Next Big Platform, and Alexa Will Own It". The title of this article makes an important point -- 'Alexa' is the Voice UI; 'Echo' is simply one of many platforms Alexa is licensed to run on.
                   </aside>
+                </section>
+
+                <section>
+                  <a href="https://www.gartner.com/doc/3021226/market-trends-voice-ui-consumer"><img src="img/gartner-voice-ui.png" alt=""></a>
                 </section>
 
 
 
                 <section>
-                  <h2>Apple video</h2>
+                  <a href="https://www.fastcodesign.com/3058546/conversational-interfaces-explained"><img src="img/fastcompany-conversational-ui.png" alt=""></a>
+                  <aside class="notes">
+                    Article on fastcompany.com: "Conversational UIs, Explained".
+                  </aside>
+                </section>
+
+                <section>
+                  <a href="https://www.fastcodesign.com/3058546/conversational-interfaces-explained"><img src="img/fastcompany-conversational-ui-types.png" alt=""></a>
+                  <aside class="notes">
+                    A conversational interface is any UI that mimics chatting with a real human. Right now, there are two basic types of conversational interfaces. There are voice assistants, which you talk to, and there are chatbots, which you type to.
+                  </aside>
+                </section>
+
+                <section data-background-color="#ffffff">
+                  <h2>WarGames: Chatbots from 1983</h2>
+                  <a href="https://www.youtube.com/watch?v=D-9l5jSDL50"><img src="img/wargames.jpg" alt=""></a>
+                </section>
+
+                <section>
+                  <h2>Web Speech API</h2>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API"><img src="img/mdn-web-speech-api.png" alt=""></a>
+                </section>
+
+                <section>
+                  <p><a href="http://caniuse.com/#feat=speech-synthesis">http://caniuse.com/#feat=speech-synthesis</a></p>
+                  <a href="http://caniuse.com/#feat=speech-synthesis"><img src="img/caniuse-speech-synthesis-api.png" alt=""></a>
+                </section>
+
+                <section data-background-color="#ffffff">
+                  <pre><code>
+var msg = new SpeechSynthesisUtterance('Hello World');
+window.speechSynthesis.speak(msg);
+                  </code></pre>
+
+                  <button onclick="sayHello()">Say Hello</button>
+                </section>
+
+                <section>
+                  <p><a href="https://github.com/mdn/web-speech-api/">https://github.com/mdn/web-speech-api/</a></p>
+                  <a href="https://github.com/mdn/web-speech-api/"><img src="img/mdn-web-speech-api-github.png" alt=""></a>
+                </section>
+
+
+                <section>
+                  <h2>Apple's Conversational UI (1987)</h2>
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/umJsITGzXd0" frameborder="0" allowfullscreen></iframe>
                   <aside class="notes">
                     Let me play you a quick video that Apple has released promoting their conversational UI.
                   </aside>
                 </section>
 
                 <section>
-                  <p>Did you notice anything strange?</p>
-                  <p class="fragment">Like, that it was released in 1987?</p>
-                  <aside class="notes">
-                    Did you notice anything strange about it? Like, the fact that it was released in 1987?
-                  </aside>
+                  <h2>Siri (2011)</h2>
+                  <a href="http://www.apple.com/ios/siri/"><img src="img/siri-home.png" alt=""></a>
                 </section>
 
                 <section>
-                  <h2>What is a Conversational UI?</h2>
-                  <aside class="notes">
-                    "Conversational UI" is a fairly broad, poorly defined term.
-                  </aside>
+                  <a href="https://en.wikipedia.org/wiki/Siri"><img src="img/siri-wikipedia.png" alt=""></a>
                 </section>
 
-                <section>
-                  <h2>Wargames</h2>
-                  <aside class="notes">
-                    Some folks think it means this: (An image from the movie "Wargames" asking, "Do you want to play a game?")
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>Text-to-Speech</h2>
-                  <p>Speech synthesis</p>
-                  <aside class="notes">
-                    While that's pretty cool (by 1983 standards),  it is really just typing and text-to-speech, right?
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>T2S Demo</h2>
-                  <aside class="notes">
-                    Live Demonstration of Text-to-Speech
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>Libby Video</h2>
-                  <aside class="notes">
-                    Video Demonstration of Text-to-Speech
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>SoundBlaster</h2>
-                  <aside class="notes">
-                    There was a time when computers didn't ship with sound cards. When you installed a SoundBlaster card, you got Dr. Zvago
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>Dr. Zvago</h2>
-                  <aside class="notes">
-                    Demonstration of Dr. Zvago
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>Artificial Intelligence</h2>
-                  <aside class="notes">
-                    Folks were in a rush to call that "Artificial Intelligence", when in fact is splitting words based on white space and applying some rudimentary grammatical rules to find the subject (or noun) of the sentence and repeating it back.
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>Recipe for Chatbot</h2>
-                  <ol>
-                    <li>Split string input on space</li>
-                    <li>Pattern match for interesting keywords</li>
-                    <li>Call corresponding function</li>
-                  </ol>
-
-                  <aside class="notes">
-                    If you are interested in writing chatbots for Slack, Twitter, Facebook, etc., start with this basic recipe:
-                    1. split string input on space
-                    2. pattern match for interesting keywords
-                    3. call corresponding function
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>DOS Prompt</h2>
-                  <aside class="notes">
-                    Congratulations! You have just reinvented the DOS prompt from 1979. (Or the Unix prompt. Or the...)
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>Recipe for AI</h2>
-                  <ol>
-                    <li>Initiate a conversation (as opposed to responding)</li>
-                    <li>Provide a contextual response beyond keyword matching, like:
-                      <br>"It looks like you are trying to get a listing of all files in this directory. Can I help?"</li>
-                    </li>
-                  </ol>
-
-                  <aside class="notes">
-                    If you are interested in writing chatbots for Slack, Twitter, Facebook, etc., start with this basic recipe:
-                    1. split string input on space
-                    2. pattern match for interesting keywords
-                    3. call corresponding function
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>Clippy</h2>
-                  <aside class="notes">
-                    Congratulations! You have just reinvented Clippy from 20xx. (This certainly caused me to shout at my computer, but it was hardly a conversational ui)
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>Multi-Modal UI</h2>
-                  <ol>
-                    <li>Text-based UI (command line, chatbots, et al)</li>
-                    <li>Graphical UI (buttons, icons, menus)</li>
-                    <li>Conversational UI (voice interaction)</li>
-                  </ol>
-
-                  <aside class="notes">
-                    We are in the early days of mainstream Conversational UIs, but I think that we will ultimately be used to describe talking to your computer in a way different than (or complementary to)
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>Evolution of GUIs</h2>
-                  <ol>
-                    <li>Tabbing around graphical elements with a keyboard</li>
-                    <li>Clicking / dragging / lassoing with a mouse</li>
-                    <li>Tapping / swiping / stretching with your fingers</li>
-                  </ol>
-
-                  <aside class="notes">
-                    Just as GUIs have evolved from tabbing around graphical elements with a keyboard, to clicking / dragging / lassoing with a mouse, to tapping / swiping / stretching with your fingers
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>Parts of a Conversational UI</h2>
-                  <ol>
-                    <li>Speech Synthesis (Text-to-Speech)</li>
-                    <li>Speech Capture (Speech-to-Text)</li>
-                    <li>Tonal analysis (voice inflections)</li>
-                    <li>Sentiment analysis (to detect sarcasm, irony, etc.)</li>
-                  </ol>
-
-                  <aside class="notes">
-                    Conversational UIs will require Speech-to-Text, tonal analysis, and eventually sentiment analysis to detect sarcasm, irony, etc.
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>Speech API</h2>
-                  <aside class="notes">
-                    W3C Speech API
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>CanIUse Speech API</h2>
-                  <aside class="notes">
-                    Can I Use W3C Speech API
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>Speech Capture API</h2>
-                  <aside class="notes">
-                    W3C Speech API
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>CanIUse Speech Capture API</h2>
-                  <aside class="notes">
-                    Can I Use W3C Speech API
-                  </aside>
-                </section>
-
-
-                <section>
-                  <h2>Tonal Analysis</h2>
-                  <aside class="notes">
-                    W3C Speech API, list of Chinese contributors
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>Chinese Tonal Analysis</h2>
-                  <p>Mother, Horse</p>
-                  <aside class="notes">
-                    Chinese vocal inflections are the difference between saying "Mother" and "Horse"
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>Sentiment Analysis</h2>
-                  <p>Sarcasm</p>
-                  <aside class="notes">
-                    Sarcasm will be especially tough, because you say the opposite of what you actually mean, and expect the listener to reverse the meaning of your words based on your tone of voice or the context of the conversation.
-                  </aside>
-                </section>
-
-
-                <section>
-                  <h2>Cloud Requirements for Speech Capture</h2>
+                <section data-background-image="img/light-bulb-1407610_1280.jpg">
+                  <h2 class="shadow">Speech Recognition === Cloud</h2>
                   <aside class="notes">
                     Speech-to-text is devilishly difficult, and currently requires either cloud access or proprietary software that requires specialized training to learn your voice.
                   </aside>
                 </section>
 
                 <section>
-                  <h2>Dragon Naturally Speak</h2>
-                  <aside class="notes">
-                    Dragon naturally speak
-                  </aside>
-                </section>
-
-
-                <section>
-                  <h2>Siri</h2>
-                  <aside class="notes">
-                    Siri
-                  </aside>
+                  <a href="https://en.wikipedia.org/wiki/Siri"><img src="img/siri-history-wikipedia.png" alt=""></a>
                 </section>
 
                 <section>
-                  <h2>Siri History</h2>
-                  <aside class="notes">
-                    Siri History
-                  </aside>
+                  <a href="https://techcrunch.com/2016/03/23/google-opens-access-to-its-speech-recognition-api-going-head-to-head-with-nuance/"><img src="img/google-speech-recognition-techcrunch.png" alt=""></a>
                 </section>
 
                 <section>
-                  <h2>Siri Example</h2>
-                  <aside class="notes">
-                    Siri Example
-                  </aside>
-                </section>
-
-
-                <section>
-                  <h2>Google</h2>
-                  <aside class="notes">
-                    Google
-                  </aside>
+                  <p><a href="http://caniuse.com/#feat=speech-recognition">http://caniuse.com/#feat=speech-recognition</a></p>
+                  <a href="http://caniuse.com/#feat=speech-recognition"><img src="img/caniuse-speech-recognition-api.png" alt=""></a>
                 </section>
 
                 <section>
-                  <h2>Google History</h2>
-                  <aside class="notes">
-                    Google History
-                  </aside>
+                  <p><a href="https://github.com/mdn/web-speech-api/">https://github.com/mdn/web-speech-api/</a></p>
+                  <a href="https://github.com/mdn/web-speech-api/"><img src="img/mdn-web-speech-api-github.png" alt=""></a>
                 </section>
 
                 <section>
-                  <h2>Google Example</h2>
-                  <aside class="notes">
-                    Google Example
-                  </aside>
-                </section>
-
-
-
-                <section>
-                  <h2>Cortana</h2>
-                  <aside class="notes">
-                    Cortana
-                  </aside>
+                  <a href="https://www.w3.org/TR/jsgf/"><img src="img/jsgf-w3c.png" alt=""></a>
                 </section>
 
                 <section>
-                  <h2>Cortana History</h2>
-                  <aside class="notes">
-                    Cortana History
-                  </aside>
+                  <a href="https://www.w3.org/TR/jsgf/"><img src="img/jsgf-w3c-intro.png" alt=""></a>
                 </section>
 
                 <section>
-                  <h2>Cortana Example</h2>
-                  <aside class="notes">
-                    Cortana Example
-                  </aside>
-                </section>
-
-
-
-
-                <section>
-                  <h2>Alexa</h2>
-                  <aside class="notes">
-                    Alexa
-                  </aside>
+                  <a href="https://www.w3.org/TR/jsgf/"><img src="img/jsgf-w3c-example.png" alt=""></a>
                 </section>
 
                 <section>
-                  <h2>Alexa vs. Echo</h2>
-                  <aside class="notes">
-                    Alexa vs. Echo (dot, 40 other licensees)
-                  </aside>
-                </section>
-
-
-                <section>
-                  <h2>Alexa History</h2>
-                  <aside class="notes">
-                    Alexa History
-                  </aside>
+                  <h2>Live Speech-to-Text Demo</h2>
+                  <a href="https://www.google.com/intl/en/chrome/demos/speech.html">https://www.google.com/intl/en/<br>chrome/demos/speech.html</a>
                 </section>
 
                 <section>
-                  <h2>Alexa Example</h2>
-                  <aside class="notes">
-                    Alexa Example
-                  </aside>
+                  <a href="https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API"><img src="img/web-speech-recognition-google.png" alt=""></a>
                 </section>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -382,7 +261,7 @@
               transition: 'fade', // none/fade/slide/convex/concave/zoom
 
               // Flags if speaker notes should be visible to all viewers
-              showNotes: true
+              showNotes: false
             });
         </script>
     </body>

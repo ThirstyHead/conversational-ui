@@ -81,6 +81,31 @@
 
           }
 
+          .sample-form {
+            background-color: #ccc;
+            color: black;
+          }
+
+          .sample-form p{
+            font-size: 0.75em;
+          }
+
+          .sample-form label{
+            font-size: 0.75em;
+          }
+
+          .sample-form input[type='text'] {
+            width: 85%;
+            height: 1.5em;
+            font-size: 1em;
+            font-style: italic;
+            color: blue;
+          }
+
+          .sample-form select {
+            height: 1.5em;
+            font-size: 0.6em;
+          }
         </style>
 
         <script type="text/javascript">
@@ -225,7 +250,42 @@ window.speechSynthesis.speak(msg);
                   <a href="https://github.com/mdn/web-speech-api/"><img src="img/mdn-web-speech-api-github.png" alt=""></a>
 
                   <aside class="notes">
-                    For a more involved example of the SpeechSynthesis API, go to github.com/mdn/web-speech-api and download the code. This doesn't require any plugins or additional libraries, and will run in any modern browser. Look especially at the Speak Easy synthesis project for ideas on how you can adjust the voice, the pitch, and the rate of speech that the SpeechSynthesis API can use. 
+                    For a more involved example of the SpeechSynthesis API, go to github.com/mdn/web-speech-api and download the code. This doesn't require any plugins or additional libraries, and will run in any modern browser. Look especially at the Speak Easy synthesis project for ideas on how you can adjust the voice, the pitch, and the rate of speech that the SpeechSynthesis API can use.
+
+                    Or, you could just go to the next slide and try it out here.
+                  </aside>
+                </section>
+
+                <section>
+                  <h2>Speech synthesiser</h2>
+                  <p>Original source:<br><a href="http://github.com/mdn/web-speech-api">http://github.com/mdn/web-speech-api</a></p>
+
+                  <div class="sample-form">
+                    <p>Enter some text in the input below and press return to hear it. Change voices using the dropdown menu.</p>
+
+                    <form>
+                    <input type="text" class="txt">
+
+                    <div>
+                      <select>
+
+                      </select>
+                    </div>
+
+                    <div style="display: inline-block">
+                      <label for="rate">Rate:</label><input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
+                      <div class="rate-value">1</div>
+                    </div>
+                    <div style="display: inline-block">
+                      <label for="pitch">Pitch:</label><input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
+                      <div class="pitch-value">1</div>
+                    </div>
+
+                    </form>
+                  </div>
+
+                  <aside class="notes">
+                    Enter some text in the input field and press return to hear it. Change voices using the dropdown menu.
                   </aside>
                 </section>
 
@@ -428,6 +488,7 @@ window.speechSynthesis.speak(msg);
 
             </div>
         </div>
+        <script src="bower_components/web-speech-api/speak-easy-synthesis/script.js"></script>
         <script src="bower_components/reveal.js/js/reveal.js"></script>
         <script>
             Reveal.initialize({

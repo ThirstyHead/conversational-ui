@@ -106,6 +106,10 @@
                       <a href="https://twitter.com/scottdavis99?lang=en">@scottdavis99</a>
                     </div>
                   </div>
+
+                  <aside class="notes">
+                    Conversational UIs: Talking to Siri, Alexa, and your web browser.
+                  </aside>
                 </section>
 
                 <section>
@@ -117,12 +121,10 @@
                       <img src="img/ibm_dW1.png" alt="">
                       <img src="img/oreilly-logo.png" alt="">
                     </div>
-
                   </div>
 
-
                   <aside class="notes">
-                    Scott Davis bio
+                    Hi! My name is Scott Davis. I'm a Principal Engineer with ThoughtWorks. I'm an author as well. Over the years, I've written for IBM developerWorks, O'Reilly, and the Pragmatic Bookshelf.
                   </aside>
                 </section>
 
@@ -134,12 +136,18 @@
                 <section>
                   <a href="https://backchannel.com/voice-is-the-next-big-platform-and-alexa-will-own-it-c2cf13fab911#.a81t7r5cb"><img src="img/backchannel-voice-is-big.png" alt=""></a>
                   <aside class="notes">
-                    Article on backchannel.com: "Voice Is the Next Big Platform, and Alexa Will Own It". The title of this article makes an important point -- 'Alexa' is the Voice UI; 'Echo' is simply one of many platforms Alexa is licensed to run on.
+                    Voice interfaces, or "Conversational UIs", are an increasingly standard feature on just about every new electronic device you purchase these days.
+                    My family got an Amazon Echo for Christmas this year, and it's amazing how quickly we've all gotten used to walking into the kitchen and saying, "Hey Alexa, play some Beatles for me." Since the Echo lacks a keyboard and a screen, we all expected to talk to Alexa from the very beginning.
+                    What caught us by surprise was pressing the search button on our new Roku remote control. Instead of pulling up an on-screen keyboard on our TV, it prompted us to hold the remote to our mouth and speak the name of the show we were hoping to watch. The voice recognition was freakishly accurate, and much faster than having to peck out one letter at a time using up, down, left, and right on the remote control.
                   </aside>
                 </section>
 
                 <section>
                   <a href="https://www.gartner.com/doc/3021226/market-trends-voice-ui-consumer"><img src="img/gartner-voice-ui.png" alt=""></a>
+
+                  <aside class="notes">
+                    Saying, "Hey Siri," "Hey Google", or "Hey Cortana" to your Apple, Google, or Microsoft smartphone doesn't seem like that big of a stretch in terms of user experiences -- after all, talking to your phone is kind of what you already expected to do. But what about talking to your refrigerator, or your toaster, or your washing machine? Or, in the case of Alexa, just talking to thin air as you walk into a room? This is going to become increasingly commonplace. Gartner predicts that by 2018, 30% of all interactions with technology will be done through conversations.
+                  </aside>
                 </section>
 
 
@@ -147,30 +155,52 @@
                 <section>
                   <a href="https://www.fastcodesign.com/3058546/conversational-interfaces-explained"><img src="img/fastcompany-conversational-ui.png" alt=""></a>
                   <aside class="notes">
-                    Article on fastcompany.com: "Conversational UIs, Explained".
+                    Satya Nadella -- the CEO of Microsoft -- went so far as to say, "The future of Microsoft is 'conversation as platform'." I'm having a hard time disagreeing with him.
                   </aside>
                 </section>
 
                 <section>
                   <a href="https://www.fastcodesign.com/3058546/conversational-interfaces-explained"><img src="img/fastcompany-conversational-ui-types.png" alt=""></a>
                   <aside class="notes">
-                    A conversational interface is any UI that mimics chatting with a real human. Right now, there are two basic types of conversational interfaces. There are voice assistants, which you talk to, and there are chatbots, which you type to.
+                    So, what is a Conversational UI? To me, it means speaking to a computer as if it were a human, instead of forcing humans to talk to computers in their native language.
+
+                    I'm not suggesting that you can't have a meaningful conversation with your computer by typing on a keyboard at the command line or in a chat window. Chatbots and texting are gaining popularity as new ways to interface with your computer in a more casual manner, but for the purposes of this presentation, I'm going to focus on talking rather than typing.
                   </aside>
                 </section>
 
                 <section data-background-color="#ffffff">
                   <h2>WarGames: Chatbots from 1983</h2>
                   <a href="https://www.youtube.com/watch?v=D-9l5jSDL50"><img src="img/wargames.jpg" alt=""></a>
+
+                  <aside class="notes">
+                    The movie "WarGames" came out in 1983, just a couple years after the personal computer was introduced to the home market. It did a great job of capturing the excitement and potential of how these new, unfamiliar devices could change our everyday lives. (You can click on the image to watch a short clip from the movie.)
+
+                    Notice how quickly Matthew Broderick explains what a Conversational UI is to his girlfriend. "It'll ask you whatever it's programmed to ask you. Would you like to hear it talk?"
+
+                    "How can it talk?" she asks. "It's not a real voice," he replies. "This box just determines signals from the computer and turns them into sound."
+                  </aside>
                 </section>
 
                 <section>
                   <h2>Web Speech API</h2>
                   <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API"><img src="img/mdn-web-speech-api.png" alt=""></a>
+
+                  <aside class="notes">
+                    Here we are almost 35 years later, and the Web Speech API allows you to do the same thing in any modern browser.
+
+                    Notice that the API is broken into two parts. The SpeechSynthesis part of the API takes text and converts it to spoken words, just like what you saw in WarGames.
+
+                    The SpeechRecognition interface -- going in the opposite direction, converting spoken words into text -- is devilishly more complex. Only recently, with advances in Artificial Intelligence and Machine Learning, coupled with nearly ubiquitous Internet connectivity and Cloud Computing, have allowed friendly agents like Siri and Alexa to become not only possible, but mainstream.
+                  </aside>
                 </section>
 
                 <section>
                   <p><a href="http://caniuse.com/#feat=speech-synthesis">http://caniuse.com/#feat=speech-synthesis</a></p>
                   <a href="http://caniuse.com/#feat=speech-synthesis"><img src="img/caniuse-speech-synthesis-api.png" alt=""></a>
+
+                  <aside class="notes">
+                    If you go to "can i use dot com" in your browser and type in "speech synthesis", you'll see that it is universally available in every modern browser that you care about. And it's ridiculously easy to implement as well.
+                  </aside>
                 </section>
 
                 <section data-background-color="#ffffff">
@@ -180,6 +210,14 @@ window.speechSynthesis.speak(msg);
                   </code></pre>
 
                   <button onclick="sayHello()">Say Hello</button>
+
+                  <aside class="notes">
+                    To add SpeechSynthesis to your webpage, it literally requires two lines of code. The first line will "new up" a SpeechSynthesisUtterance object, passing in your text string as the only constructor argument. In the next line of code, you simply ask the SpeechSynthesis API to speak your new utterance.
+
+                    Click the "Say Hello" button to hear this code in action.
+
+                    For more information on this, do a web search on "MDN SpeechSynthesisUtterance". This will return a link to the Mozilla Developer Network article. The Mozilla organization is, of course, who brings you the Firefox web browser. I find their JavaScript documentation to be among the best on the Internet.
+                  </aside>
                 </section>
 
                 <section>

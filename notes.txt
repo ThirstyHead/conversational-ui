@@ -12,7 +12,7 @@ Demo text-to-speech in the Browser
 
 There was a time when computers didn't ship with sound cards. When you installed a SoundBlaster card, you got Dr. Zvago
 
-Folks were in a rush to call that "Artificial Intelligence", when in fact is splitting words based on white space and applying some rudamentary grammatical rules to find the subject (or noun) of the sentence and repeating it back.
+Folks were in a rush to call that "Artificial Intelligence", when in fact is splitting words based on white space and applying some rudimentary grammatical rules to find the subject (or noun) of the sentence and repeating it back.
 
 If you are interested in writing chatbots for Slack, Twitter, Facebook, etc., start with this basic recipe:
 1. split string input on space
@@ -47,7 +47,19 @@ Speech-to-text is devilishly difficult, and currently requires either cloud acce
 
 Dragon naturally speak
 
-So, why is Speech-to-Text asymetrically harder than Text-to-Speech?
+So, why is Speech-to-Text asymmetrically harder than Text-to-Speech?
+
+
+
+
+
+
+
+
+
+
+
+
 
 Parsing is harder
 Accents
@@ -85,7 +97,7 @@ So, yes -- english is a hot mess. An ambiguous, hot mess.
 
 But wait, there's more!
 
-How about homonyms -- words that sound the same, but mean completely differnet things. 
+How about homonyms -- words that sound the same, but mean completely differnet things.
 
 
 

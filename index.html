@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
+
+        <style>
+          .reveal .slides section h2 {
+            text-transform: none;
+          }
+
+          .reveal .slides section pre {
+            color: white;
+            background-color: black;
+          }
+
+          .reveal .slides section button {
+            font-size: 2em;
+          }
+
+          .reveal .slides section h2.shadow {
+            text-shadow: 3px 3px 3px #000;
+            background: #ccc;
+            }
+
+          .banner {
+            position:fixed;
+            bottom:50px;
+            background-color: #ccc;
+            height: 250px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+          }
+
+          .banner .title {
+            justify-content: flex-start;
+            font-size: 1em;
+            text-align: left;
+            padding: 0.5em;
+          }
+
+          .banner .title h1 {
+            justify-content: flex-start;
+            font-size: 1.5em;
+            text-transform: none;
+            font-weight: bold;
+          }
+
+          .banner .title h2 {
+            justify-content: flex-start;
+            font-size: 1em;
+            text-transform: none;
+            font-style: italic;
+          }
+
+
+          .banner .bio {
+            justify-content: flex-end;
+            align-self: flex-end;
+            font-size: 0.5em;
+            text-align: right;
+            padding: 0.5em;
+          }
+
+          .banner .bio a{
+            color: #222;
+          }
+
+          .bio-page {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+          }
+
+          .bio-page .bio-right {
+            text-align: right;
+            padding: 0.5em;
+
+          }
+
+        </style>
+
+        <script type="text/javascript">
+          function sayHello(){
+            var msg = new SpeechSynthesisUtterance('Hello World');
+            window.speechSynthesis.speak(msg);
+          }
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-background-image="img/conversation-799448_1280.png"
+                         data-background-color="#ffffff">
+                  <div class="banner">
+                    <div class="title">
+                      <h1>Conversational UIs</h1>
+                      <h2>Talking to Siri, Alexa, and Your Web Browser</h2>
+                    </div>
+                    <div class="bio">
+                      Scott Davis <br>
+                      <a href="mailto:sdavis@thoughtworks.com">sdavis@thoughtworks.com</a> <br>
+                      <a href="https://twitter.com/scottdavis99?lang=en">@scottdavis99</a>
+                    </div>
+                  </div>
+                </section>
+
+                <section>
+                  <div class="bio-page">
+                    <img src="img/scott_davis_2012.jpg" alt="">
+                    <div class="bio-right">
+                      <p>Scott Davis</p>
+                      <img src="img/thoughtworks-logo-2.png" alt="">
+                      <img src="img/ibm_dW1.png" alt="">
+                      <img src="img/oreilly-logo.png" alt="">
+                    </div>
+
+                  </div>
+
+
+                  <aside class="notes">
+                    Scott Davis bio
+                  </aside>
+                </section>
+
+                <section>
+                  <h2>Talk-o-Vision</h2>
+                  <aside class="notes">
+                    Info on Talk-o-vision
+                  </aside>
+                </section>
+
+                <section>
+                  <a href="https://backchannel.com/voice-is-the-next-big-platform-and-alexa-will-own-it-c2cf13fab911#.a81t7r5cb"><img src="img/backchannel-voice-is-big.png" alt=""></a>
+                  <aside class="notes">
+                    Article on backchannel.com: "Voice Is the Next Big Platform, and Alexa Will Own It". The title of this article makes an important point -- 'Alexa' is the Voice UI; 'Echo' is simply one of many platforms Alexa is licensed to run on.
+                  </aside>
+                </section>
+
+                <section>
+                  <a href="https://www.gartner.com/doc/3021226/market-trends-voice-ui-consumer"><img src="img/gartner-voice-ui.png" alt=""></a>
+                </section>
+
+
+
+                <section>
+                  <a href="https://www.fastcodesign.com/3058546/conversational-interfaces-explained"><img src="img/fastcompany-conversational-ui.png" alt=""></a>
+                  <aside class="notes">
+                    Article on fastcompany.com: "Conversational UIs, Explained".
+                  </aside>
+                </section>
+
+                <section>
+                  <a href="https://www.fastcodesign.com/3058546/conversational-interfaces-explained"><img src="img/fastcompany-conversational-ui-types.png" alt=""></a>
+                  <aside class="notes">
+                    A conversational interface is any UI that mimics chatting with a real human. Right now, there are two basic types of conversational interfaces. There are voice assistants, which you talk to, and there are chatbots, which you type to.
+                  </aside>
+                </section>
+
+                <section data-background-color="#ffffff">
+                  <h2>WarGames: Chatbots from 1983</h2>
+                  <a href="https://www.youtube.com/watch?v=D-9l5jSDL50"><img src="img/wargames.jpg" alt=""></a>
+                </section>
+
+                <section>
+                  <h2>Web Speech API</h2>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API"><img src="img/mdn-web-speech-api.png" alt=""></a>
+                </section>
+
+                <section>
+                  <p><a href="http://caniuse.com/#feat=speech-synthesis">http://caniuse.com/#feat=speech-synthesis</a></p>
+                  <a href="http://caniuse.com/#feat=speech-synthesis"><img src="img/caniuse-speech-synthesis-api.png" alt=""></a>
+                </section>
+
+                <section data-background-color="#ffffff">
+                  <pre><code>
+var msg = new SpeechSynthesisUtterance('Hello World');
+window.speechSynthesis.speak(msg);
+                  </code></pre>
+
+                  <button onclick="sayHello()">Say Hello</button>
+                </section>
+
+                <section>
+                  <p><a href="https://github.com/mdn/web-speech-api/">https://github.com/mdn/web-speech-api/</a></p>
+                  <a href="https://github.com/mdn/web-speech-api/"><img src="img/mdn-web-speech-api-github.png" alt=""></a>
+                </section>
+
+
+                <section>
+                  <h2>Apple's Conversational UI (1987)</h2>
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/umJsITGzXd0" frameborder="0" allowfullscreen></iframe>
+                  <aside class="notes">
+                    Let me play you a quick video that Apple has released promoting their conversational UI.
+                  </aside>
+                </section>
+
+                <section>
+                  <h2>Siri (2011)</h2>
+                  <a href="http://www.apple.com/ios/siri/"><img src="img/siri-home.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://en.wikipedia.org/wiki/Siri"><img src="img/siri-wikipedia.png" alt=""></a>
+                </section>
+
+                <section data-background-image="img/light-bulb-1407610_1280.jpg">
+                  <h2 class="shadow">Speech Recognition === Cloud</h2>
+                  <aside class="notes">
+                    Speech-to-text is devilishly difficult, and currently requires either cloud access or proprietary software that requires specialized training to learn your voice.
+                  </aside>
+                </section>
+
+                <section>
+                  <a href="https://en.wikipedia.org/wiki/Siri"><img src="img/siri-history-wikipedia.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://techcrunch.com/2016/03/23/google-opens-access-to-its-speech-recognition-api-going-head-to-head-with-nuance/"><img src="img/google-speech-recognition-techcrunch.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://cloud.google.com/blog/big-data/2017/01/new-features-in-the-google-cloud-natural-language-api-thanks-to-your-feedback"><img src="img/google-cloud-natural-language-api.png" alt=""></a>
+                </section>
+
+
+                <section>
+                  <p><a href="http://caniuse.com/#feat=speech-recognition">http://caniuse.com/#feat=speech-recognition</a></p>
+                  <a href="http://caniuse.com/#feat=speech-recognition"><img src="img/caniuse-speech-recognition-api.png" alt=""></a>
+                </section>
+
+                <section>
+                  <p><a href="https://github.com/mdn/web-speech-api/">https://github.com/mdn/web-speech-api/</a></p>
+                  <a href="https://github.com/mdn/web-speech-api/"><img src="img/mdn-web-speech-api-github.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://www.w3.org/TR/jsgf/"><img src="img/jsgf-w3c.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://www.w3.org/TR/jsgf/"><img src="img/jsgf-w3c-intro.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://www.w3.org/TR/jsgf/"><img src="img/jsgf-w3c-example.png" alt=""></a>
+                </section>
+
+                <section>
+                  <h2>Live Speech-to-Text Demo</h2>
+                  <a href="https://www.google.com/intl/en/chrome/demos/speech.html">https://www.google.com/intl/en/<br>chrome/demos/speech.html</a>
+                </section>
+
+                <section>
+                  <a href="https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API"><img src="img/web-speech-recognition-google.png" alt=""></a>
+                </section>
+
+
+                <section>
+                  <a href="https://smile.amazon.com/Amazon-Echo-Bluetooth-Speaker-with-WiFi-Alexa/dp/B00X4WHP5E/ref=sr_1_1?ie=UTF8&qid=1484605178&sr=8-1&keywords=echo"><img src="img/amazon-echo-home.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="http://fortune.com/2015/06/25/amazon-alexa-fund/"><img src="img/amazon-echo-fortune.png" alt=""></a>
+                </section>
+
+                <section>
+                  <p><a href="https://github.com/alexa/skill-sample-nodejs-fact">https://github.com/alexa/skill-sample-nodejs-fact</a></p>
+                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-readme.png" alt=""></a>
+                </section>
+
+                <!-- Steps -->
+                <section>
+                  <h2>Step 1.</h2>
+                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-step01.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-step01b.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-step01c.png" alt=""></a>
+                </section>
+
+                <section>
+                  <h2>Step 2.</h2>
+                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-step02.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-step02b.png" alt=""></a>
+                </section>
+
+                <section>
+                  <h2>Step 3.</h2>
+                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-step03.png" alt=""></a>
+                </section>
+
+                <section>
+                  <h2>Step 4.</h2>
+                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-step04.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-step04b.png" alt=""></a>
+                </section>
+                <!-- Steps -->
+
+                <section>
+                  <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-intro.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-steps.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-step01.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-step03.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-step04.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-step05.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-example.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-example02.png" alt=""></a>
+                </section>
+
+                <section>
+                  <p><a href="https://github.com/mdn/web-speech-api/">https://github.com/mdn/web-speech-api/</a></p>
+                  <a href="https://github.com/mdn/web-speech-api/"><img src="img/mdn-web-speech-api-github.png" alt=""></a>
+                </section>
+
+                <section>
+                  <h2>Web Speech API</h2>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API"><img src="img/mdn-web-speech-api.png" alt=""></a>
+                </section>
+
+                <section>
+                  <a href="https://backchannel.com/voice-is-the-next-big-platform-and-alexa-will-own-it-c2cf13fab911#.a81t7r5cb"><img src="img/backchannel-voice-is-big.png" alt=""></a>
+                  <aside class="notes">
+                    Article on backchannel.com: "Voice Is the Next Big Platform, and Alexa Will Own It". The title of this article makes an important point -- 'Alexa' is the Voice UI; 'Echo' is simply one of many platforms Alexa is licensed to run on.
+                  </aside>
+                </section>
+
+                <section>
+                  <a href="https://www.gartner.com/doc/3021226/market-trends-voice-ui-consumer"><img src="img/gartner-voice-ui.png" alt=""></a>
+                </section>
+
+                <section data-background-image="img/conversation-799448_1280.png"
+                         data-background-color="#ffffff">
+                  <div class="banner">
+                    <div class="title">
+                      <h1>Conversational UIs</h1>
+                      <h2>Talking to Siri, Alexa, and Your Web Browser</h2>
+                    </div>
+                    <div class="bio">
+                      Scott Davis <br>
+                      <a href="mailto:sdavis@thoughtworks.com">sdavis@thoughtworks.com</a> <br>
+                      <a href="https://twitter.com/scottdavis99?lang=en">@scottdavis99</a>
+                    </div>
+                  </div>
+                </section>
+
+            </div>
+        </div>
+        <script src="bower_components/reveal.js/js/reveal.js"></script>
+        <script>
+            Reveal.initialize({
+              // Display controls in the bottom right corner
+              controls: false,
+
+              // Display a presentation progress bar
+              progress: false,
+
+              // Push each slide change to the browser history
+              history: true,
+
+              // Transition style
+              transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+              // Flags if speaker notes should be visible to all viewers
+              showNotes: false
+            });
+        </script>
+    </body>
+</html>

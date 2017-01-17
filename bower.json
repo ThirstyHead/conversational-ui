@@ -1,5 +1,6 @@
 {
   "name": "conversational-ui",
+  "version": "1.0.0",
   "homepage": "https://github.com/ThirstyHead/conversational-ui",
   "authors": [
     "Scott Davis <sdavis@thoughtworks.com>"

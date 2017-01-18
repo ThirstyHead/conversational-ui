@@ -106,6 +106,10 @@
             height: 1.5em;
             font-size: 0.6em;
           }
+
+          .speech-color-changer p{
+            font-size: 0.6em;
+          }
         </style>
 
         <script type="text/javascript">
@@ -343,22 +347,97 @@ window.speechSynthesis.speak(msg);
 
                 <section>
                   <a href="https://techcrunch.com/2016/03/23/google-opens-access-to-its-speech-recognition-api-going-head-to-head-with-nuance/"><img src="img/google-speech-recognition-techcrunch.png" alt=""></a>
+
+                  <aside class="notes">
+                    Google, of course, uses a completely different service than the Nuance service that Apple uses for SpeechRecognition. Google's services -- The Google Cloud Speech API and the Google Cloud Natural Language API -- are homegrown. They are what Android devices and Chrome web browsers use under the covers. These services are available for you to use -- for a cost -- in your own applications as well.
+
+                    Using the SpeechRecognition API in Chrome browsers, on the other hand, is completely free. (Yeah, I agree -- it can be a bit confusing, can't it?)
+                  </aside>
                 </section>
 
                 <section>
                   <a href="https://cloud.google.com/blog/big-data/2017/01/new-features-in-the-google-cloud-natural-language-api-thanks-to-your-feedback"><img src="img/google-cloud-natural-language-api.png" alt=""></a>
+
+                  <aside class="notes">
+                    The difference between the Cloud Speech API and the Cloud Natural Language API really boils down to the type of SpeechRecognition you are looking for.
+
+                    The Cloud Natural Language API allows you (and your users) to speak free-form words, sentences, and paragraphs. It offers features like Sentiment Analysis -- does the speaker sound angry, or are they using a neutral tone of voice? -- and Entity Recognition. Entity Recognition returns more than a simple text string -- it identifies people, places, and things within the text string. So when your user says something like, "I went into the Apple Store yesterday and asked them where all of the Android devices are. The employee looked at me like I was from Mars", the Entity Recognition API should pull out entities like "Apple Store", "yesterday", "Android devices", and "Mars".
+
+                    As interesting (and impressive) as that is, the Cloud Natural Language API probably isn't what you'll want to use to allow your users to check their email or add a new event to their calendar using a Conversational UI. The Cloud Speech API (and the SpeechRecognition API that you'll use in the browser, and the new skill you'll add to Alexa before the end of this presentation) doesn't allow the "unconstrained speech recognition" that the Cloud Natural Language API does. Instead, you (the programmer) will supply a specific set of grammars -- key words like "Open", "Close", "Move", and "Delete" -- that the API will listen for and identify.
+
+                    But before we move on to "constrained speech recognition", check out the "unconstrained speech" live demo on the next page. It is what I used (with a healthy amount of hand-editing after the fact), to transcribe my spoken words into the notes you are listening to now.
+                  </aside>
                 </section>
+
+                <section>
+                  <h2>Live Speech-to-Text Demo</h2>
+                  <a href="https://www.google.com/intl/en/chrome/demos/speech.html">https://www.google.com/intl/en/<br>chrome/demos/speech.html</a>
+
+                  <aside class="notes">
+                    Click on the link to play with unconstrained natural language recognition. You won't regret it -- it's a ton of fun!
+
+                    Oh, I probably should mention that as of today, this demo only works in Google Chrome and Opera. Bummer, eh? I'll talk more about that in just a few minutes.
+                  </aside>
+                </section>
+
+                <section>
+                  <a href="https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API"><img src="img/web-speech-recognition-google.png" alt=""></a>
+
+                  <aside class="notes">
+                    This article explains the code used to implement the live demo you played around with on the previous page.
+
+                    Oh, and by the way, notice when this example was written -- January, 2013. The Web Speech API -- including the SpeechRecognition API -- has been delightfully stable for years -- that is, it's delightfully stable in the browsers that have bothered to implement it in the first place.
+                  </aside>
+                </section>
+
+
+
 
 
                 <section>
                   <p><a href="http://caniuse.com/#feat=speech-recognition">http://caniuse.com/#feat=speech-recognition</a></p>
                   <a href="http://caniuse.com/#feat=speech-recognition"><img src="img/caniuse-speech-recognition-api.png" alt=""></a>
+
+                  <aside class="notes">
+                    Remember when I said that the SpeechSynthesis API is available in all modern browsers? Well, the SpeechRecognition API is available in all modern browsers that Google manufactures.
+
+                    If that's the case, then why is Opera also included in this short list of supported browsers as well? Funny story -- they stopped writing their own HTML rendering engine and JavaScript runtime engine years ago. Now, they use Google's "Blink" rendering engine and "V8" JavaScript runtime, just like Chrome. Same fizzy soda, different can.
+
+                    As of today, Firefox's "Gecko" rendering engine and "SpiderMonkey" JavaScript runtime offer partial SpeechRecognition support, although it's hidden away behind a developer flag that you have to manually turn on in your local configuration. Not exactly "ready for primetime", eh?
+
+                    Microsoft Edge is a fine browser, and I mean that without a lick of sarcasm. It is a ground-up rewrite of IE, using modern engineering practices and a real dedication to standards compliance. Heck, you can even find the source code at "github dot com slash microsoft". Currently, "EdgeHTML" (the rendering engine) and "Chakra" (the JavaScript runtime) do not support the SpeechRecognition API, but it's under active development, and coupled with CEO Satya Nadella's assertion that "The future of Microsoft is 'conversation as platform'", I'm sure that we'll see some interesting movement on this front sooner rather than later.
+
+                    I'm not aware of Apple's plans for "WebKit" (Safari's rendering engine) and "Nitro" (their JavaScript runtime), but given their strong support for Siri in ObjectiveC and Swift, I'd imagine that you could cobble together a hybrid web app using PhoneGap or a similar solution.
+                  </aside>
                 </section>
 
                 <section>
                   <p><a href="https://github.com/mdn/web-speech-api/">https://github.com/mdn/web-speech-api/</a></p>
                   <a href="https://github.com/mdn/web-speech-api/"><img src="img/mdn-web-speech-api-github.png" alt=""></a>
+
+                  <aside class="notes">
+                    To see some simple, "bounded grammar" examples of what the SpeechRecognition API can do in Google Chrome, let's go back to the Mozilla Developer Network Web Speech API project I had you download earlier from "github dot com slash mdn". We'll look specifically at the "speech color changer" first, and then the "phrase matcher" afterwards.
+
+                    On the next page, you'll be able to change the background color simply by clicking anywhere on the page and saying a color name out loud.
+                  </aside>
                 </section>
+
+                <section>
+                  <h2>Speech color changer</h2>
+                  <p>Original source:<br><a href="http://github.com/mdn/web-speech-api">http://github.com/mdn/web-speech-api</a></p>
+
+                  <button onclick="sayColor()" id="color-button">Click to Change Color</button>
+
+                  <div class="speech-color-changer">
+                    <p class="hints"></p>
+                    <div>
+                        <p class="output"><em>...diagnostic messages</em></p>
+                    </div>
+                  </div>
+                </section>
+
+
+
 
                 <section>
                   <a href="https://www.w3.org/TR/jsgf/"><img src="img/jsgf-w3c.png" alt=""></a>
@@ -372,14 +451,7 @@ window.speechSynthesis.speak(msg);
                   <a href="https://www.w3.org/TR/jsgf/"><img src="img/jsgf-w3c-example.png" alt=""></a>
                 </section>
 
-                <section>
-                  <h2>Live Speech-to-Text Demo</h2>
-                  <a href="https://www.google.com/intl/en/chrome/demos/speech.html">https://www.google.com/intl/en/<br>chrome/demos/speech.html</a>
-                </section>
 
-                <section>
-                  <a href="https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API"><img src="img/web-speech-recognition-google.png" alt=""></a>
-                </section>
 
 
                 <section>
@@ -512,6 +584,7 @@ window.speechSynthesis.speak(msg);
             </div>
         </div>
         <script src="bower_components/web-speech-api/speak-easy-synthesis/script.js"></script>
+        <script src="speech-color-changer.js"></script>
         <script src="bower_components/reveal.js/js/reveal.js"></script>
         <script>
             Reveal.initialize({

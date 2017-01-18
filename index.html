@@ -434,7 +434,69 @@ window.speechSynthesis.speak(msg);
                         <p class="output"><em>...diagnostic messages</em></p>
                     </div>
                   </div>
+
+                  <aside class="notes">
+                    Click on the button and say one of the colors from the list.
+
+                    Remember -- this example currently only works in Google Chrome. Don't blame the messenger -- I love all browsers equally, although I do have my favorites.
+
+                    If the background color of the button doesn't change, look at the "Result Received" area at the bottom of the screen, or open up the JavaScript console and see if there are any nasty red error messages waiting for you.
+                  </aside>
                 </section>
+
+                <section data-background-color="#ffffff">
+                  <h2>Interesting Source Code</h2>
+                  <pre><code>
+var colors = [ 'aqua', 'azure', 'beige']; //snip
+var grammar = '#JSGF V1.0; grammar colors; public <color> = ' +
+              colors.join(' | ') + ' ;'
+
+var recognition = new SpeechRecognition();
+var speechRecognitionList = new SpeechGrammarList();
+speechRecognitionList.addFromString(grammar, 1);
+recognition.grammars = speechRecognitionList;
+                  </code></pre>
+
+                  <aside class="notes">
+                    Let's snoop around the source code for the "Color Changer" demo.
+
+                    First, you'll notice that we're setting up an Array of color names.
+
+                    Next, we create our "bounded grammar". Rather than offering pure, unbounded Natural Language recognition, we are limiting our universe of possibilities to just this list of words.
+
+                    After that, we link everything together programmatically.
+                  </aside>
+                </section>
+
+                <section data-background-color="#ffffff">
+                  <h2>More Interesting Source Code</h2>
+                  <pre><code>
+button.onclick = function() {
+  recognition.start();
+  console.log('Ready to receive a color command.');
+}
+
+recognition.onresult = function(event) {
+  var last = event.results.length - 1;
+  var color = event.results[last][0].transcript;
+
+  diagnostic.textContent = 'Result received: ' + color + '.';
+  bg.style.backgroundColor = color;
+  console.log('Confidence: ' + event.results[0][0].confidence);
+}
+                  </code></pre>
+
+                  <aside class="notes">
+                    Later on in the code, we start the recognition process with a simple "onclick" event listener.
+
+                    Since this requires a round-trip visit to the Cloud, we set up an "onresult" listener that fires once we receive the response.
+
+                    As we learned earlier, there's quite a bit of AI heavy-lifting going on behind the scenes. But our end of the code shouldn't surprise anyone who has done even the slightest bit of event-driven JavaScript programming.
+
+                    To learn more about the various objects and function calls used in this example, do a web search on "MDN SpeechRecognition".
+                  </aside>
+                </section>
+
 
 
 

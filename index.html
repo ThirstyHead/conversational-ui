@@ -149,7 +149,7 @@
                   </div>
 
                   <aside class="notes">
-                    Hi! My name is Scott Davis. I'm a Principal Engineer with ThoughtWorks. I'm an author as well. Over the years, I've written for IBM developerWorks, O'Reilly, and the Pragmatic Bookshelf.
+                    Hi! My name is Scott Davis. I'm a Principal Engineer with ThoughtWorks. I'm an author as well. Over the past 25 years, I've written for IBM developerWorks, O'Reilly, and the Pragmatic Bookshelf.
                   </aside>
                 </section>
 
@@ -187,7 +187,7 @@
                 <section>
                   <a href="https://www.fastcodesign.com/3058546/conversational-interfaces-explained"><img src="img/fastcompany-conversational-ui-types.png" alt=""></a>
                   <aside class="notes">
-                    So, what is a Conversational UI? To me, it means speaking to a computer as if it were a human, instead of forcing humans to talk to computers in their native language.
+                    So, what is a Conversational UI? To me, it means speaking to a computer as if it were a human, instead of forcing humans to talk to computers in their native language. As a human, are you more inclined to express yourself by saying, "Please show me all of the files in this folder" or by saying, "d i r star dot star" or "l s dash a l"?
 
                     I'm not suggesting that you can't have a meaningful conversation with your computer by typing on a keyboard at the command line or in a chat window. Chatbots and texting are gaining popularity as new ways to interface with your computer in a more casual manner, but for the purposes of this presentation, I'm going to focus on talking rather than typing.
                   </aside>
@@ -200,7 +200,7 @@
                   <aside class="notes">
                     The movie "WarGames" came out in 1983, just a couple years after the personal computer was introduced to the home market. It did a great job of capturing the excitement and potential of how these new, unfamiliar devices could change our everyday lives. (You can click on the image to watch a short clip from the movie.)
 
-                    Notice how quickly Matthew Broderick explains what a Conversational UI is to his girlfriend. "It'll ask you whatever it's programmed to ask you. Would you like to hear it talk?"
+                    Notice how concisely Matthew Broderick explains what a Conversational UI is to his girlfriend. "It'll ask you whatever it's programmed to ask you. Would you like to hear it talk?"
 
                     "How can it talk?" she asks. "It's not a real voice," he replies. "This box just determines signals from the computer and turns them into sound."
                   </aside>
@@ -237,7 +237,7 @@ window.speechSynthesis.speak(msg);
                   <button onclick="sayHello()">Say Hello</button>
 
                   <aside class="notes">
-                    To add SpeechSynthesis to your webpage, it literally requires two lines of code. The first line will "new up" a SpeechSynthesisUtterance object, passing in your text string as the only constructor argument. In the next line of code, you simply ask the SpeechSynthesis API to speak your new utterance.
+                    To add SpeechSynthesis to your webpage, it literally requires only two lines of code. The first line will "new up" a SpeechSynthesisUtterance object, passing in your text string as the only constructor argument. In the next line of code, you simply ask the SpeechSynthesis API to speak your new utterance.
 
                     Click the "Say Hello" button to hear this code in action.
 
@@ -294,17 +294,28 @@ window.speechSynthesis.speak(msg);
                   <h2>Apple's Conversational UI (1987)</h2>
                   <iframe width="560" height="315" src="https://www.youtube.com/embed/umJsITGzXd0" frameborder="0" allowfullscreen></iframe>
                   <aside class="notes">
-                    Let me play you a quick video that Apple has released promoting their conversational UI.
+                    Now that you've seen the SpeechSynthesis API in action, let's take a look at the other half of the equation -- SpeechRecognition. Here's a video that Apple produced in 1987 --  not long after the movie WarGames hit the theaters.
                   </aside>
                 </section>
 
                 <section>
                   <h2>Siri (2011)</h2>
                   <a href="http://www.apple.com/ios/siri/"><img src="img/siri-home.png" alt=""></a>
+
+                  <aside class="notes">
+                    And 25 years later, your friend Siri is on every device that Apple sells. This, by the way, is a perfect example of a Conversational UI. Instead of saying, "Siri, select restaurants from Denver where category equals sushi," you can simply say, "Hey Siri, what's the best sushi place in town?"
+                  </aside>
                 </section>
 
                 <section>
                   <a href="https://en.wikipedia.org/wiki/Siri"><img src="img/siri-wikipedia.png" alt=""></a>
+
+                  <aside class="notes">
+                    Apple acquired Siri in 2010 from a company called SRI International -- formerly known as the Stanford Research Institute. This is the same company that literally invented the Internet back in the late 1960s.
+
+                    Siri uses what is called a "Natural Language User Interface". This is an important distinction from simply grunting key words like a caveman. "Scott hungry. Eat sushi?" But this Natural Language interface comes with a cost -- a computational cost. Unlike SpeechSynthesis, which is practically free in terms of CPU utilization, providing an effective SpeechRecognition user experience is beyond what a typical smartphone -- let alone a watch -- can provide on its own without a little bit of help from the cloud.
+
+                  </aside>
                 </section>
 
                 <section data-background-image="img/light-bulb-1407610_1280.jpg">

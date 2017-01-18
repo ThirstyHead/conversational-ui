@@ -503,14 +503,40 @@ recognition.onresult = function(event) {
 
                 <section>
                   <a href="https://www.w3.org/TR/jsgf/"><img src="img/jsgf-w3c.png" alt=""></a>
+
+                  <aside class="notes">
+                    When we set up our bounded grammar in this "color changer" example, we were, in fact, using a W3C spec called "The JSpeech Grammar Format", or "JSGF" for short.
+
+                    If you haven't read a W3C spec before (and I know that you haven't -- why would you lie to me after all that we've been through together?), I highly recommend that you give one a try. They tend to be far more readable than you might expect, and there are even the occasional joke or two sprinkled in.
+
+                    At any rate, notice how long this spec has been in place. I love standards-based solutions over proprietary ones, and this standard has been in place for nearly 20 years. It might actually be older than you are. Given the fact that the first HTML spec was published in 1995, we can say that the JSGF spec is almost as old as the web itself.
+                  </aside>
                 </section>
 
                 <section>
                   <a href="https://www.w3.org/TR/jsgf/"><img src="img/jsgf-w3c-intro.png" alt=""></a>
+
+                  <aside class="notes">
+                    We've already discussed the difference between "constrained" and "unconstrained" speech recognition. By using JSGF, we are defining the "bounded grammar" for our application.
+
+                    Another important key word you'll see come up again and again is "utterance". This is what you're expecting your user to say -- things like "open a file" or "close the window".
+                  </aside>
                 </section>
 
                 <section>
                   <a href="https://www.w3.org/TR/jsgf/"><img src="img/jsgf-w3c-example.png" alt=""></a>
+
+                  <aside class="notes">
+                    Here are a couple of examples of JSGF grammars. Notice that they can easily be combined to create more complex, sophisticated grammars.
+
+                    Grammar "Rules" are surrounded by angle brackets. In this example, "startPolite" and "endPolite" are two rules. Towards the bottom, you'll see several examples of composing rules out of other rules, like "basicCmd" and "command".
+
+                    Rules that contain an array of possible words use the vertical pipe symbol. (Programmers probably recognize this as the "or" symbol.) This is officially called defining a "set of alternatives".
+
+                    You can group a set of alternatives together using either round parentheses or square brackets. Square-bracketed alternatives are completely optional -- your user may or may not utter a single one of them. Similarly, the asterisk after the "startPolite" rule indicates that this utterance may be uttered zero or more times. (Using a plus sign instead of an asterisk means that you expect to hear the utterance at least one or more times.)
+
+                    In practice, this means that your user could say "open the window", or "open the window, thanks", or "please please please oh mighty computer could you kindly open the window". (See what I mean about the occasional joke in these specs?)
+                  </aside>
                 </section>
 
 

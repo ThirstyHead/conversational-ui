@@ -321,12 +321,24 @@ window.speechSynthesis.speak(msg);
                 <section data-background-image="img/light-bulb-1407610_1280.jpg">
                   <h2 class="shadow">Speech Recognition === Cloud</h2>
                   <aside class="notes">
-                    Speech-to-text is devilishly difficult, and currently requires either cloud access or proprietary software that requires specialized training to learn your voice.
+                      The computational horsepower required for a good natural language user experience with speech recognition requires an Internet connection at this point in time. This explains why Siri (and Alexa, and Cortana, and even the SpeechRecognition API your web browser) literally loses her mind when you're riding on a subway underground, or in an urban canyon without good Internet connectivity, or when your phone is in "Airplane Mode".
+
+                      SpeechSynthesis, on the other hand, is a completely local experience, and requires zero internet connectivity.
                   </aside>
                 </section>
 
                 <section>
                   <a href="https://en.wikipedia.org/wiki/Siri"><img src="img/siri-history-wikipedia.png" alt=""></a>
+
+                  <aside class="notes">
+                    I try to avoid using the phrase "Artificial Intelligence" when explaining speech recognition to folks, although speech recognition would absolutely not be available to us without artificial intelligence. The distinction is subtle but important.
+
+                    The AI required for SpeechRecognition is used to convert spoken words and sentences into text, not to intelligently answer the questions contained within. What Mattew Broderick said back in 1983 -- "It'll ask you whatever it's programmed to ask you" -- is still true today. It's up to you to deal with the resulting text that's handed back to you from your Cloud SpeechRecognition web service of choice. Sadly, this means that all of the  intelligence -- artificial or otherwise -- needed to trick the end user into thinking that they are talking to an actual person must be provided by you, the programmer.
+
+                    As a web developer, I never have to worry about moving bits and bytes in and out of memory segments, or the low-level packet and protocol negotiations that happen many layers of abstraction below where I do my day-to-day programming. Like SpeechRecognition, we web developers are truly standing on the shoulders of giants.
+
+                    If the AI aspect of this problem is more interesting to you than dealing with pesky human requests, you should look into the company Nuance Communications. They provide the giant's shoulders that Siri stands on.
+                  </aside>
                 </section>
 
                 <section>

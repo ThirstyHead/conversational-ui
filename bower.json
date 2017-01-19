@@ -1,6 +1,6 @@
 {
   "name": "conversational-ui",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "homepage": "https://github.com/ThirstyHead/conversational-ui",
   "authors": [
     "Scott Davis <sdavis@thoughtworks.com>"
@@ -15,5 +15,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "web-speech-api": "mdn/web-speech-api",
+    "reveal.js": "^3.4.0"
+  }
 }

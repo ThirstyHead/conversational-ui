@@ -142,6 +142,14 @@
                 </section>
 
                 <section>
+                  <img src="img/scott-davis-bio.png" alt="">
+
+                  <aside class="notes">
+                    Hi! My name is Scott Davis. I'm a Principal Engineer with ThoughtWorks. I'm an author as well. Over the past 25 years, I've written for IBM developerWorks, O'Reilly, and the Pragmatic Bookshelf.
+                  </aside>
+                </section>
+
+                <!-- <section>
                   <div class="bio-page">
                     <img src="img/scott_davis_2012.jpg" alt="">
                     <div class="bio-right">
@@ -155,10 +163,13 @@
                   <aside class="notes">
                     Hi! My name is Scott Davis. I'm a Principal Engineer with ThoughtWorks. I'm an author as well. Over the past 25 years, I've written for IBM developerWorks, O'Reilly, and the Pragmatic Bookshelf.
                   </aside>
-                </section>
+                </section> -->
 
                 <section>
-                  <p><a href="https://github.com/ThirstyHead/conversational-ui">https://github.com/ThirstyHead/conversational-ui</a></p>
+                  <p>
+                    <a href="https://thirstyhead.github.io/conversational-ui">https://thirstyhead.github.io/conversational-ui</a><br>
+                    <a href="https://github.com/ThirstyHead/conversational-ui">https://github.com/ThirstyHead/conversational-ui</a>
+                  </p>
                   <a href="https://github.com/ThirstyHead/conversational-ui"><img src="img/presentation-github.png" alt=""></a>
                 </section>
 
@@ -355,7 +366,7 @@ window.speechSynthesis.speak(msg);
                   </aside>
                 </section>
 
-                <section>
+                <!-- <section>
                   <a href="https://cloud.google.com/blog/big-data/2017/01/new-features-in-the-google-cloud-natural-language-api-thanks-to-your-feedback"><img src="img/google-cloud-natural-language-api.png" alt=""></a>
 
                   <aside class="notes">
@@ -367,7 +378,7 @@ window.speechSynthesis.speak(msg);
 
                     But before we move on to "constrained speech recognition", check out the "unconstrained speech" live demo on the next page. It is what I used (with a healthy amount of hand-editing after the fact), to transcribe my spoken words into the notes you are listening to now.
                   </aside>
-                </section>
+                </section> -->
 
                 <section>
                   <h2>Live Speech-to-Text Demo</h2>
@@ -546,21 +557,43 @@ recognition.onresult = function(event) {
                   <a href="https://smile.amazon.com/Amazon-Echo-Bluetooth-Speaker-with-WiFi-Alexa/dp/B00X4WHP5E/ref=sr_1_1?ie=UTF8&qid=1484605178&sr=8-1&keywords=echo"><img src="img/amazon-echo-home.png" alt=""></a>
 
                   <aside class="notes">
+                    In this final section, we get to what I think is one of the most exciting examples of a Conversational AI available today -- Amazon's Alexa. It is a pure Conversational UI, because there is no keyboard, and no screen -- just you, your voice, and your ears.
 
+                    While we're here, we should make an important distinction. "Alexa" is the voice interface -- the "agent", if you will. Alexa is available on a number of different Amazon hardware devices -- the "echo", the "dot", and the "tap" among others. But Amazon is aggressively licensing Alexa to other manufacturers, so you might hear her voice coming out of a refriderator or washing machine as well.
+
+                    But the reason I'm so excited about Alexa is how easy it is to give her new, custom capabilities. These new capabilities are called "Skills". For example, if you add the "Domino's Pizza skill", you can then say, "Alexa, ask Domino's to track my order". If you add the "Uber skill", you can then say, "Alexa, ask Uber to request a ride."
+
+                    I'll walk you through creating your own custom skill in just a moment.
                   </aside>
                 </section>
 
                 <section>
                   <a href="http://fortune.com/2015/06/25/amazon-alexa-fund/"><img src="img/amazon-echo-fortune.png" alt=""></a>
+
+                  <aside class="notes">
+                    Not only has Amazon created a well-documented software development kit that allows you to easily add your own skills to Alexa, they've also created an incubator fund to encourage people to think of clever ways to commercialize and monetize the new skills that they create.
+                  </aside>
                 </section>
 
                 <section>
                   <p><a href="https://github.com/alexa/skill-sample-nodejs-fact">https://github.com/alexa/skill-sample-nodejs-fact</a></p>
                   <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github.png" alt=""></a>
+
+                  <aside class="notes">
+                    Head over to "github dot com slash alexa slash skill dash sample dash node j s dash fact" to not only get a glimpse of what the source code looks like, but also to read their extensive, detailed readme file. It walks you through a step by step "copy and paste" example that will give you an early success in well under an hour. After that, you can expand upon the example or use it as a leaping off point for your own custom skill.
+                  </aside>
                 </section>
 
                 <section>
                   <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-readme.png" alt=""></a>
+
+                  <aside class="notes">
+                    The Alexa skill you're about to create is called "SpaceGeek". SpaceGeek -- as the name implies -- offers up an interesting, spoken space-related fact upon request. All you have to do is ask. And, ironically, the name of the toolkit you'll use to implement this is called the "Alexa Skills Kit", or "Ask" for short. (Isn't that cute?)
+
+                    The source code is written in JavaScript, and uses Node J S. This example also offers an interesting glimpse into the capabilities of AWS Lambda.
+
+                    If you're not familiar with Amazon's Lambda service, it's a bit different than your typical web server that you want to be up and running 24 7. A Lambda service is request-based. When ask Alexa for a new SpaceGeek fact, Amazon will spin your Lambda service long enough to satisfy the request, and then shut it back down again. This ends up being a very clever and cost-effective way to implement your new Alexa skill. Of course, this isn't the only option you have. You can also have Alexa call out to any https URL.
+                  </aside>
                 </section>
 
                 <!-- Steps -->
@@ -609,7 +642,7 @@ recognition.onresult = function(event) {
                   <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-intro.png" alt=""></a>
                 </section>
 
-                <section>
+                <!-- <section>
                   <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-steps.png" alt=""></a>
                 </section>
 
@@ -627,7 +660,7 @@ recognition.onresult = function(event) {
 
                 <section>
                   <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-step05.png" alt=""></a>
-                </section>
+                </section> -->
 
                 <section>
                   <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-example.png" alt=""></a>
@@ -656,6 +689,11 @@ recognition.onresult = function(event) {
 
                 <section>
                   <a href="https://www.gartner.com/doc/3021226/market-trends-voice-ui-consumer"><img src="img/gartner-voice-ui.png" alt=""></a>
+                </section>
+
+                <section>
+                  <h2>Libby Davis, School Report</h2>
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/dFrxBYY2azo" frameborder="0" allowfullscreen></iframe>
                 </section>
 
                 <section data-background-image="img/conversation-799448_1280.png"

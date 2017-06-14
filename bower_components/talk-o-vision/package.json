@@ -1,0 +1,24 @@
+{
+  "name": "talk-o-vision",
+  "version": "0.4.0",
+  "description": "An HTML-based slideshow framework",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThirstyHead/talk-o-vision.git"
+  },
+  "keywords": [
+    "html",
+    "slides",
+    "slideshow"
+  ],
+  "author": "Scott Davis <scott@thirstyhead.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ThirstyHead/talk-o-vision/issues"
+  },
+  "homepage": "https://github.com/ThirstyHead/talk-o-vision#readme"
+}

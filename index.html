@@ -1,487 +1,330 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
-        <link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
+  <head>
+    <meta charset="utf-8">
+    <title>Conversational UIs: Talking to Siri, Alexa, and Your Web Browser</title>
+    <link rel="stylesheet" href="bower_components/talk-o-vision/talk-o-vision.css">
+    <style>
+      .title-slide{
+        background: url('slides/title/img/conversation.png') no-repeat center center;
+        background-size: contain;
+        background-color: white;
+      }
 
-        <style>
-          .reveal .slides section h2 {
-            text-transform: none;
-          }
+      .banner-title{
+        padding-top: 15%;
+      }
 
-          .reveal .slides section pre {
-            color: white;
-            background-color: black;
-          }
+      /* Speech Synthesis */
+      button{
+        font-size: 2em;
+      }
 
-          .reveal .slides section button {
-            font-size: 2em;
-          }
+      code{
+        font-size: 1rem;
+      }
 
-          .reveal .slides section h2.shadow {
-            text-shadow: 3px 3px 3px #000;
-            background: #ccc;
-            }
+      .sample-form {
+        background-color: #ccc;
+        color: black;
+      }
 
-          .banner {
-            position:fixed;
-            bottom:50px;
-            background-color: #ccc;
-            height: 250px;
-            width: 100%;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-          }
+      .sample-form p{
+        font-size: 0.75em;
+      }
 
-          .banner .title {
-            justify-content: flex-start;
-            font-size: 1em;
-            text-align: left;
-            padding: 0.5em;
-          }
+      .sample-form label{
+        font-size: 0.75em;
+      }
 
-          .banner .title h1 {
-            justify-content: flex-start;
-            font-size: 1.5em;
-            text-transform: none;
-            font-weight: bold;
-          }
+      .sample-form input[type='text'] {
+        width: 85%;
+        height: 1.5em;
+        font-size: 1em;
+        /*font-style: italic;*/
+        color: blue;
+        word-spacing: 10px;
+      }
 
-          .banner .title h2 {
-            justify-content: flex-start;
-            font-size: 1em;
-            text-transform: none;
-            font-style: italic;
-          }
+      .sample-form select {
+        height: 1.5em;
+        font-size: 0.6em;
+      }
 
+      .speech-color-changer p{
+        font-size: 0.6em;
+      }
+      /* Speech Synthesis */
 
-          .banner .bio {
-            justify-content: flex-end;
-            align-self: flex-end;
-            font-size: 0.5em;
-            text-align: right;
-            padding: 0.5em;
-          }
+      iframe{
+        max-height: 75%;
+      }
 
-          .banner .bio a{
-            color: #222;
-          }
+    </style>
 
-          .bio-page {
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-          }
+    <script type="text/javascript">
+      function sayHello(){
+        var msg = new SpeechSynthesisUtterance('Hello World');
+        window.speechSynthesis.speak(msg);
+      }
+    </script>
 
-          .bio-page .bio-right {
-            text-align: right;
-            padding: 0.5em;
+  </head>
+  <body>
+    <ol class="slideshow">
+      <li class="title-slide">
+          <div class="banner">
+            <div class="banner-title">
+              <h1>Conversational UIs</h1>
+              <h2>Talking to Siri, Alexa, and Your Web Browser</h2>
+            </div>
+            <div class="banner-bio">
+              Scott Davis <br>
+              <a href="mailto:sdavis@thoughtworks.com">sdavis@thoughtworks.com</a> <br>
+              <a href="https://twitter.com/scottdavis99?lang=en">@scottdavis99</a>
+            </div>
+          </div>
+      </li>
 
-          }
+      <li class="bg-white">
+        <img src="slides/bio/img/scott-davis-bio.png"
+             alt=""
+             class="full-height">
+      </li>
 
-          .sample-form {
-            background-color: #ccc;
-            color: black;
-          }
+      <li class="bg-white">
+        <img src="slides/voice/img/backchannel-voice-is-big.png"
+             alt=""
+             class="full-height">
+      </li>
 
-          .sample-form p{
-            font-size: 0.75em;
-          }
+      <li class="bg-white">
+        <img src="slides/voice/img/amazon-dash.png"
+             alt=""
+             class="full-height">
+      </li>
 
-          .sample-form label{
-            font-size: 0.75em;
-          }
+      <li>
+        <h2 class="section-title">Io<span class="highlight">(C)</span>T<br>
+          Internet of <span class="highlight">Conversational</span> Things
+        </h2>
+      </li>
 
-          .sample-form input[type='text'] {
-            width: 85%;
-            height: 1.5em;
-            font-size: 1em;
-            font-style: italic;
-            color: blue;
-          }
+      <li class="bg-white">
+        <img src="slides/voice/img/gartner-voice-ui.png"
+             alt=""
+             class="full-height">
+      </li>
 
-          .sample-form select {
-            height: 1.5em;
-            font-size: 0.6em;
-          }
+      <li class="bg-white">
+        <img src="slides/siri/img/siri-home.png"
+             alt=""
+             class="full-height">
+      </li>
 
-          .speech-color-changer p{
-            font-size: 0.6em;
-          }
-        </style>
+      <li class="bg-white">
+        <h2>Wargames (1983)</h2>
+        <a href="https://www.youtube.com/watch?v=D-9l5jSDL50">
+        <img src="slides/wargames/img/wargames.jpg"
+             alt=""
+             class="">
+        </a>
+      </li>
 
-        <script type="text/javascript">
-          function sayHello(){
-            var msg = new SpeechSynthesisUtterance('Hello World');
-            window.speechSynthesis.speak(msg);
-          }
-        </script>
-    </head>
-    <body>
-        <div class="reveal">
-            <div class="slides">
-                <section data-background-image="img/conversation-799448_1280.png"
-                         data-background-color="#ffffff">
-                  <div class="banner">
-                    <div class="title">
-                      <h1>Conversational UIs</h1>
-                      <h2>Talking to Siri, Alexa, and Your Web Browser</h2>
-                    </div>
-                    <div class="bio">
-                      Scott Davis <br>
-                      <a href="mailto:sdavis@thoughtworks.com">sdavis@thoughtworks.com</a> <br>
-                      <a href="https://twitter.com/scottdavis99?lang=en">@scottdavis99</a>
-                    </div>
-                  </div>
+      <li class="bg-white">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">
+        <img src="slides/web-speech-api/img/mdn-web-speech-api.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
 
-                  <aside class="notes">
-                    Conversational UIs: Talking to Siri, Alexa, and your web browser.
-                  </aside>
-                </section>
+      <li class="bg-white">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">
+        <img src="slides/web-speech-api/img/mdn-web-speech-api-github.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
 
-                <section>
-                  <img src="img/scott-davis-bio.png" alt="">
+      <li class="bg-white">
+        <a href="http://caniuse.com/#feat=speech-synthesis">
+        <img src="slides/web-speech-api/img/caniuse-speech-synthesis-api.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
 
-                  <aside class="notes">
-                    Hi! My name is Scott Davis. I'm a Principal Engineer with ThoughtWorks. I'm an author as well. Over the past 25 years, I've written for IBM developerWorks, O'Reilly, and the Pragmatic Bookshelf.
-                  </aside>
-                </section>
-
-                <!-- <section>
-                  <div class="bio-page">
-                    <img src="img/scott_davis_2012.jpg" alt="">
-                    <div class="bio-right">
-                      <p>Scott Davis</p>
-                      <img src="img/thoughtworks-logo-2.png" alt="">
-                      <img src="img/ibm_dW1.png" alt="">
-                      <img src="img/oreilly-logo.png" alt="">
-                    </div>
-                  </div>
-
-                  <aside class="notes">
-                    Hi! My name is Scott Davis. I'm a Principal Engineer with ThoughtWorks. I'm an author as well. Over the past 25 years, I've written for IBM developerWorks, O'Reilly, and the Pragmatic Bookshelf.
-                  </aside>
-                </section> -->
-
-                <section>
-                  <p>
-                    <a href="https://thirstyhead.github.io/conversational-ui">https://thirstyhead.github.io/conversational-ui</a><br>
-                    <a href="https://github.com/ThirstyHead/conversational-ui">https://github.com/ThirstyHead/conversational-ui</a>
-                  </p>
-                  <a href="https://github.com/ThirstyHead/conversational-ui"><img src="img/presentation-github.png" alt=""></a>
-                </section>
-
-                <section>
-                  <a href="https://backchannel.com/voice-is-the-next-big-platform-and-alexa-will-own-it-c2cf13fab911#.a81t7r5cb"><img src="img/backchannel-voice-is-big.png" alt=""></a>
-                  <aside class="notes">
-                    Voice interfaces, or "Conversational UIs", are an increasingly standard feature on just about every new electronic device you purchase these days.
-                    My family got an Amazon Echo for Christmas this year, and it's amazing how quickly we've all gotten used to walking into the kitchen and saying, "Hey Alexa, play some Beatles for me." Since the Echo lacks a keyboard and a screen, we all expected to talk to Alexa from the very beginning.
-                    What caught us by surprise was pressing the search button on our new Roku remote control. Instead of pulling up an on-screen keyboard on our TV, it prompted us to hold the remote to our mouth and speak the name of the show we were hoping to watch. The voice recognition was freakishly accurate, and much faster than having to peck out one letter at a time using up, down, left, and right on the remote control.
-                  </aside>
-                </section>
-
-                <section>
-                  <a href="https://www.gartner.com/doc/3021226/market-trends-voice-ui-consumer"><img src="img/gartner-voice-ui.png" alt=""></a>
-
-                  <aside class="notes">
-                    Saying, "Hey Siri," "Hey Google", or "Hey Cortana" to your Apple, Google, or Microsoft smartphone doesn't seem like that big of a stretch in terms of user experiences -- after all, talking to your phone is kind of what you already expected to do. But what about talking to your refrigerator, or your toaster, or your washing machine? Or, in the case of Alexa, just talking to thin air as you walk into a room? This is going to become increasingly commonplace. Gartner predicts that by 2018, 30% of all interactions with technology will be done through conversations.
-                  </aside>
-                </section>
-
-
-
-                <section>
-                  <a href="https://www.fastcodesign.com/3058546/conversational-interfaces-explained"><img src="img/fastcompany-conversational-ui.png" alt=""></a>
-                  <aside class="notes">
-                    Satya Nadella -- the CEO of Microsoft -- went so far as to say, "The future of Microsoft is 'conversation as platform'." I'm having a hard time disagreeing with him.
-                  </aside>
-                </section>
-
-                <section>
-                  <a href="https://www.fastcodesign.com/3058546/conversational-interfaces-explained"><img src="img/fastcompany-conversational-ui-types.png" alt=""></a>
-                  <aside class="notes">
-                    So, what is a Conversational UI? To me, it means speaking to a computer as if it were a human, instead of forcing humans to talk to computers in their native language. As a human, are you more inclined to express yourself by saying, "Please show me all of the files in this folder" or by saying, "d i r star dot star" or "l s dash a l"?
-
-                    I'm not suggesting that you can't have a meaningful conversation with your computer by typing on a keyboard at the command line or in a chat window. Chatbots and texting are gaining popularity as new ways to interface with your computer in a more casual manner, but for the purposes of this presentation, I'm going to focus on talking rather than typing.
-                  </aside>
-                </section>
-
-                <section data-background-color="#ffffff">
-                  <h2>WarGames: Chatbots from 1983</h2>
-                  <a href="https://www.youtube.com/watch?v=D-9l5jSDL50"><img src="img/wargames.jpg" alt=""></a>
-
-                  <aside class="notes">
-                    The movie "WarGames" came out in 1983, just a couple years after the personal computer was introduced to the home market. It did a great job of capturing the excitement and potential of how these new, unfamiliar devices could change our everyday lives. (You can click on the image to watch a short clip from the movie.)
-
-                    Notice how concisely Matthew Broderick explains what a Conversational UI is to his girlfriend. "It'll ask you whatever it's programmed to ask you. Would you like to hear it talk?"
-
-                    "How can it talk?" she asks. "It's not a real voice," he replies. "This box just determines signals from the computer and turns them into sound."
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>Web Speech API</h2>
-                  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API"><img src="img/mdn-web-speech-api.png" alt=""></a>
-
-                  <aside class="notes">
-                    Here we are almost 35 years later, and the Web Speech API allows you to do the same thing in any modern browser.
-
-                    Notice that the API is broken into two parts. The SpeechSynthesis part of the API takes text and converts it to spoken words, just like what you saw in WarGames.
-
-                    The SpeechRecognition interface -- going in the opposite direction, converting spoken words into text -- is devilishly more complex. Only recently, with advances in Artificial Intelligence and Machine Learning, coupled with nearly ubiquitous Internet connectivity and Cloud Computing, have allowed friendly agents like Siri and Alexa to become not only possible, but mainstream.
-                  </aside>
-                </section>
-
-                <section>
-                  <p><a href="http://caniuse.com/#feat=speech-synthesis">http://caniuse.com/#feat=speech-synthesis</a></p>
-                  <a href="http://caniuse.com/#feat=speech-synthesis"><img src="img/caniuse-speech-synthesis-api.png" alt=""></a>
-
-                  <aside class="notes">
-                    If you go to "can i use dot com" in your browser and type in "speech synthesis", you'll see that it is universally available in every modern browser that you care about. And it's ridiculously easy to implement as well.
-                  </aside>
-                </section>
-
-                <section data-background-color="#ffffff">
-                  <pre><code>
-var msg = new SpeechSynthesisUtterance('Hello World');
+      <li class="">
+        <p>&nbsp;</p>
+        <pre><code>
+let msg = new SpeechSynthesisUtterance('Hello World');
 window.speechSynthesis.speak(msg);
-                  </code></pre>
-
-                  <button onclick="sayHello()">Say Hello</button>
-
-                  <aside class="notes">
-                    To add SpeechSynthesis to your webpage, it literally requires only two lines of code. The first line will "new up" a SpeechSynthesisUtterance object, passing in your text string as the only constructor argument. In the next line of code, you simply ask the SpeechSynthesis API to speak your new utterance.
-
-                    Click the "Say Hello" button to hear this code in action.
-
-                    For more information on this, do a web search on "MDN SpeechSynthesisUtterance". This will return a link to the Mozilla Developer Network article. The Mozilla organization is, of course, who brings you the Firefox web browser. I find their JavaScript documentation to be among the best on the Internet.
-                  </aside>
-                </section>
-
-                <section>
-                  <p><a href="https://github.com/mdn/web-speech-api/">https://github.com/mdn/web-speech-api/</a></p>
-                  <a href="https://github.com/mdn/web-speech-api/"><img src="img/mdn-web-speech-api-github.png" alt=""></a>
-
-                  <aside class="notes">
-                    For a more involved example of the SpeechSynthesis API, go to github.com/mdn/web-speech-api and download the code. This doesn't require any plugins or additional libraries, and will run in any modern browser. Look especially at the Speak Easy synthesis project for ideas on how you can adjust the voice, the pitch, and the rate of speech that the SpeechSynthesis API can use.
-
-                    Or, you could just go to the next slide and try it out here.
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>Speech synthesiser</h2>
-                  <p>Original source:<br><a href="http://github.com/mdn/web-speech-api">http://github.com/mdn/web-speech-api</a></p>
-
-                  <div class="sample-form">
-                    <p>Enter some text in the input below and press return to hear it. Change voices using the dropdown menu.</p>
-
-                    <form>
-                    <input type="text" class="txt">
-
-                    <div>
-                      <select>
-
-                      </select>
-                    </div>
-
-                    <div style="display: inline-block">
-                      <label for="rate">Rate:</label><input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
-                      <div class="rate-value">1</div>
-                    </div>
-                    <div style="display: inline-block">
-                      <label for="pitch">Pitch:</label><input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
-                      <div class="pitch-value">1</div>
-                    </div>
-
-                    </form>
-                  </div>
-
-                  <aside class="notes">
-                    Enter some text in the input field and press return to hear it. Change voices using the dropdown menu.
-                  </aside>
-                </section>
-
-
-                <section>
-                  <h2>Apple's Conversational UI (1987)</h2>
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/umJsITGzXd0" frameborder="0" allowfullscreen></iframe>
-                  <aside class="notes">
-                    Now that you've seen the SpeechSynthesis API in action, let's take a look at the other half of the equation -- SpeechRecognition. Here's a video that Apple produced in 1987 --  not long after the movie WarGames hit the theaters.
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>Siri (2011)</h2>
-                  <a href="http://www.apple.com/ios/siri/"><img src="img/siri-home.png" alt=""></a>
-
-                  <aside class="notes">
-                    And 25 years later, your friend Siri is on every device that Apple sells. This, by the way, is a perfect example of a Conversational UI. Instead of saying, "Siri, select restaurants from Denver where category equals sushi," you can simply say, "Hey Siri, what's the best sushi place in town?"
-                  </aside>
-                </section>
-
-                <section>
-                  <a href="https://en.wikipedia.org/wiki/Siri"><img src="img/siri-wikipedia.png" alt=""></a>
-
-                  <aside class="notes">
-                    Apple acquired Siri in 2010 from a company called SRI International -- formerly known as the Stanford Research Institute. This is the same company that literally invented the Internet back in the late 1960s.
-
-                    Siri uses what is called a "Natural Language User Interface". This is an important distinction from simply grunting key words like a caveman. "Scott hungry. Eat sushi?" But this Natural Language interface comes with a cost -- a computational cost. Unlike SpeechSynthesis, which is practically free in terms of CPU utilization, providing an effective SpeechRecognition user experience is beyond what a typical smartphone -- let alone a watch -- can provide on its own without a little bit of help from the cloud.
-
-                  </aside>
-                </section>
-
-                <section data-background-image="img/light-bulb-1407610_1280.jpg">
-                  <h2 class="shadow">Speech Recognition === Cloud</h2>
-                  <aside class="notes">
-                      The computational horsepower required for a good natural language user experience with speech recognition requires an Internet connection at this point in time. This explains why Siri (and Alexa, and Cortana, and even the SpeechRecognition API your web browser) literally loses her mind when you're riding on a subway underground, or in an urban canyon without good Internet connectivity, or when your phone is in "Airplane Mode".
-
-                      SpeechSynthesis, on the other hand, is a completely local experience, and requires zero internet connectivity.
-                  </aside>
-                </section>
-
-                <section>
-                  <a href="https://en.wikipedia.org/wiki/Siri"><img src="img/siri-history-wikipedia.png" alt=""></a>
-
-                  <aside class="notes">
-                    I try to avoid using the phrase "Artificial Intelligence" when explaining speech recognition to folks, although speech recognition would absolutely not be available to us without artificial intelligence. The distinction is subtle but important.
-
-                    The AI required for SpeechRecognition is used to convert spoken words and sentences into text, not to intelligently answer the questions contained within. What Mattew Broderick said back in 1983 -- "It'll ask you whatever it's programmed to ask you" -- is still true today. It's up to you to deal with the resulting text that's handed back to you from your Cloud SpeechRecognition web service of choice. Sadly, this means that all of the  intelligence -- artificial or otherwise -- needed to trick the end user into thinking that they are talking to an actual person must be provided by you, the programmer.
-
-                    As a web developer, I never have to worry about moving bits and bytes in and out of memory segments, or the low-level packet and protocol negotiations that happen many layers of abstraction below where I do my day-to-day programming. Like SpeechRecognition, we web developers are truly standing on the shoulders of giants.
-
-                    If the AI aspect of this problem is more interesting to you than dealing with pesky human requests, you should look into the company Nuance Communications. They provide the giant's shoulders that Siri stands on.
-                  </aside>
-                </section>
-
-                <section>
-                  <a href="https://techcrunch.com/2016/03/23/google-opens-access-to-its-speech-recognition-api-going-head-to-head-with-nuance/"><img src="img/google-speech-recognition-techcrunch.png" alt=""></a>
-
-                  <aside class="notes">
-                    Google, of course, uses a completely different service than the Nuance service that Apple uses for SpeechRecognition. Google's services -- The Google Cloud Speech API and the Google Cloud Natural Language API -- are homegrown. They are what Android devices and Chrome web browsers use under the covers. These services are available for you to use -- for a cost -- in your own applications as well.
-
-                    Using the SpeechRecognition API in Chrome browsers, on the other hand, is completely free. (Yeah, I agree -- it can be a bit confusing, can't it?)
-                  </aside>
-                </section>
-
-                <!-- <section>
-                  <a href="https://cloud.google.com/blog/big-data/2017/01/new-features-in-the-google-cloud-natural-language-api-thanks-to-your-feedback"><img src="img/google-cloud-natural-language-api.png" alt=""></a>
-
-                  <aside class="notes">
-                    The difference between the Cloud Speech API and the Cloud Natural Language API really boils down to the type of SpeechRecognition you are looking for.
-
-                    The Cloud Natural Language API allows you (and your users) to speak free-form words, sentences, and paragraphs. It offers features like Sentiment Analysis -- does the speaker sound angry, or are they using a neutral tone of voice? -- and Entity Recognition. Entity Recognition returns more than a simple text string -- it identifies people, places, and things within the text string. So when your user says something like, "I went into the Apple Store yesterday and asked them where all of the Android devices are. The employee looked at me like I was from Mars", the Entity Recognition API should pull out entities like "Apple Store", "yesterday", "Android devices", and "Mars".
-
-                    As interesting (and impressive) as that is, the Cloud Natural Language API probably isn't what you'll want to use to allow your users to check their email or add a new event to their calendar using a Conversational UI. The Cloud Speech API (and the SpeechRecognition API that you'll use in the browser, and the new skill you'll add to Alexa before the end of this presentation) doesn't allow the "unconstrained speech recognition" that the Cloud Natural Language API does. Instead, you (the programmer) will supply a specific set of grammars -- key words like "Open", "Close", "Move", and "Delete" -- that the API will listen for and identify.
-
-                    But before we move on to "constrained speech recognition", check out the "unconstrained speech" live demo on the next page. It is what I used (with a healthy amount of hand-editing after the fact), to transcribe my spoken words into the notes you are listening to now.
-                  </aside>
-                </section> -->
-
-                <section>
-                  <h2>Live Speech-to-Text Demo</h2>
-                  <a href="https://www.google.com/intl/en/chrome/demos/speech.html">https://www.google.com/intl/en/<br>chrome/demos/speech.html</a>
-
-                  <aside class="notes">
-                    Click on the link to play with unconstrained natural language recognition. You won't regret it -- it's a ton of fun!
-
-                    Oh, I probably should mention that as of today, this demo only works in Google Chrome and Opera. Bummer, eh? I'll talk more about that in just a few minutes.
-                  </aside>
-                </section>
-
-                <section>
-                  <a href="https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API"><img src="img/web-speech-recognition-google.png" alt=""></a>
-
-                  <aside class="notes">
-                    This article explains the code used to implement the live demo you played around with on the previous page.
-
-                    Oh, and by the way, notice when this example was written -- January, 2013. The Web Speech API -- including the SpeechRecognition API -- has been delightfully stable for years -- that is, it's delightfully stable in the browsers that have bothered to implement it in the first place.
-                  </aside>
-                </section>
-
-
-
-
-
-                <section>
-                  <p><a href="http://caniuse.com/#feat=speech-recognition">http://caniuse.com/#feat=speech-recognition</a></p>
-                  <a href="http://caniuse.com/#feat=speech-recognition"><img src="img/caniuse-speech-recognition-api.png" alt=""></a>
-
-                  <aside class="notes">
-                    Remember when I said that the SpeechSynthesis API is available in all modern browsers? Well, the SpeechRecognition API is available in all modern browsers that Google manufactures.
-
-                    If that's the case, then why is Opera also included in this short list of supported browsers as well? Funny story -- they stopped writing their own HTML rendering engine and JavaScript runtime engine years ago. Now, they use Google's "Blink" rendering engine and "V8" JavaScript runtime, just like Chrome. Same fizzy soda, different can.
-
-                    As of today, Firefox's "Gecko" rendering engine and "SpiderMonkey" JavaScript runtime offer partial SpeechRecognition support, although it's hidden away behind a developer flag that you have to manually turn on in your local configuration. Not exactly "ready for primetime", eh?
-
-                    Microsoft Edge is a fine browser, and I mean that without a lick of sarcasm. It is a ground-up rewrite of IE, using modern engineering practices and a real dedication to standards compliance. Heck, you can even find the source code at "github dot com slash microsoft". Currently, "EdgeHTML" (the rendering engine) and "Chakra" (the JavaScript runtime) do not support the SpeechRecognition API, but it's under active development, and coupled with CEO Satya Nadella's assertion that "The future of Microsoft is 'conversation as platform'", I'm sure that we'll see some interesting movement on this front sooner rather than later.
-
-                    I'm not aware of Apple's plans for "WebKit" (Safari's rendering engine) and "Nitro" (their JavaScript runtime), but given their strong support for Siri in ObjectiveC and Swift, I'd imagine that you could cobble together a hybrid web app using PhoneGap or a similar solution.
-                  </aside>
-                </section>
-
-                <section>
-                  <p><a href="https://github.com/mdn/web-speech-api/">https://github.com/mdn/web-speech-api/</a></p>
-                  <a href="https://github.com/mdn/web-speech-api/"><img src="img/mdn-web-speech-api-github.png" alt=""></a>
-
-                  <aside class="notes">
-                    To see some simple, "bounded grammar" examples of what the SpeechRecognition API can do in Google Chrome, let's go back to the Mozilla Developer Network Web Speech API project I had you download earlier from "github dot com slash mdn". We'll look specifically at the "speech color changer" first, and then the "phrase matcher" afterwards.
-
-                    On the next page, you'll be able to change the background color simply by clicking anywhere on the page and saying a color name out loud.
-                  </aside>
-                </section>
-
-                <section>
-                  <h2>Speech color changer</h2>
-                  <p>Original source:<br><a href="http://github.com/mdn/web-speech-api">http://github.com/mdn/web-speech-api</a></p>
-
-                  <button onclick="sayColor()" id="color-button">Click to Change Color</button>
-
-                  <div class="speech-color-changer">
-                    <p class="hints"></p>
-                    <div>
-                        <p class="output"><em>...diagnostic messages</em></p>
-                    </div>
-                  </div>
-
-                  <aside class="notes">
-                    Click on the button and say one of the colors from the list.
-
-                    Remember -- this example currently only works in Google Chrome. Don't blame the messenger -- I love all browsers equally, although I do have my favorites.
-
-                    If the background color of the button doesn't change, look at the "Result Received" area at the bottom of the screen, or open up the JavaScript console and see if there are any nasty red error messages waiting for you.
-                  </aside>
-                </section>
-
-                <section data-background-color="#ffffff">
-                  <h2>Interesting Source Code</h2>
-                  <pre><code>
+        </code></pre>
+
+        <button onclick="sayHello()">Say Hello</button>
+      </li>
+
+      <li class="">
+        <h2>Speech synthesiser</h2>
+        <p>Original source:<br><a href="http://github.com/mdn/web-speech-api">http://github.com/mdn/web-speech-api</a></p>
+
+        <div class="sample-form">
+          <p>Enter some text in the input below and press return to hear it. Change voices using the dropdown menu.</p>
+
+          <form>
+          <input type="text"
+                 class="txt"
+                 value="hello world"/>
+
+          <div>
+            <select>
+
+            </select>
+          </div>
+
+          <div style="display: inline-block">
+            <label for="rate">Rate:</label><input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
+            <div class="rate-value">1</div>
+          </div>
+          <div style="display: inline-block">
+            <label for="pitch">Pitch:</label><input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
+            <div class="pitch-value">1</div>
+          </div>
+
+          </form>
+        </div>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://www.w3.org/TR/speech-synthesis/">
+        <img src="slides/ssml/img/ssml-w3c.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://www.w3.org/TR/speech-synthesis/">
+        <img src="slides/ssml/img/ssml-w3c-example.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://www.w3.org/TR/speech-synthesis/">
+        <img src="slides/ssml/img/ssml-w3c-example02.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+
+      <li>
+        <h2 class="section-title">Speech <span class="highlight">Recognition</span></h2>
+      </li>
+
+      <li>
+        <h2>Apple's Conversational UI (1987)</h2>
+        <iframe width="300"
+                height="200"
+                src="https://www.youtube.com/embed/umJsITGzXd0"
+                frameborder="0"
+                allowfullscreen></iframe>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://en.wikipedia.org/wiki/Siri">
+        <img src="slides/siri/img/siri-wikipedia.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://en.wikipedia.org/wiki/Siri">
+        <img src="slides/siri/img/siri-history-wikipedia.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/siri/img/light-bulb.jpg"
+             alt=""
+             class="full-height">
+      </li>
+
+
+      <li class="bg-white">
+        <a href="https://techcrunch.com/2016/03/23/google-opens-access-to-its-speech-recognition-api-going-head-to-head-with-nuance/">
+        <img src="slides/google-speech/img/google-speech-recognition-techcrunch.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API">
+        <img src="slides/google-speech/img/web-speech-recognition-google.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li>
+        <h2>Live Speech-to-Text Demo</h2>
+        <a href="https://www.google.com/intl/en/chrome/demos/speech.html"><span class="highlight">https://www.google.com/intl/en/<br>chrome/demos/speech.html</span></a>
+      </li>
+
+      <li>
+        <a href="http://caniuse.com/#feat=speech-recognition">
+        <img src="slides/web-speech-api/img/caniuse-speech-recognition-api.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">
+        <img src="slides/web-speech-api/img/mdn-web-speech-api-github.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <h2>Speech color changer</h2>
+        <p>Original source:<br><a href="http://github.com/mdn/web-speech-api">http://github.com/mdn/web-speech-api</a></p>
+
+        <button onclick="sayColor()" id="color-button">Click to Change Color</button>
+
+        <div class="speech-color-changer">
+          <p class="hints"></p>
+          <div>
+              <p class="output"><em>...diagnostic messages</em></p>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <h2>Interesting Source Code</h2>
+        <pre><code>
 var colors = [ 'aqua', 'azure', 'beige']; //snip
 var grammar = '#JSGF V1.0; grammar colors; public <color> = ' +
-              colors.join(' | ') + ' ;'
+    colors.join(' | ') + ' ;'
 
 var recognition = new SpeechRecognition();
 var speechRecognitionList = new SpeechGrammarList();
 speechRecognitionList.addFromString(grammar, 1);
 recognition.grammars = speechRecognitionList;
-                  </code></pre>
+        </code></pre>
+      </li>
 
-                  <aside class="notes">
-                    Let's snoop around the source code for the "Color Changer" demo.
-
-                    First, you'll notice that we're setting up an Array of color names.
-
-                    Next, we create our "bounded grammar". Rather than offering pure, unbounded Natural Language recognition, we are limiting our universe of possibilities to just this list of words.
-
-                    After that, we link everything together programmatically.
-                  </aside>
-                </section>
-
-                <section data-background-color="#ffffff">
-                  <h2>More Interesting Source Code</h2>
-                  <pre><code>
+      <li>
+        <h2>More Interesting Source Code</h2>
+        <pre><code>
 button.onclick = function() {
   recognition.start();
   console.log('Ready to receive a color command.');
@@ -493,246 +336,154 @@ recognition.onresult = function(event) {
 
   diagnostic.textContent = 'Result received: ' + color + '.';
   bg.style.backgroundColor = color;
-  console.log('Confidence: ' + event.results[0][0].confidence);
+  console.log('Confidence: ' +
+              event.results[0][0].confidence);
 }
-                  </code></pre>
+        </code></pre>
+      </li>
 
-                  <aside class="notes">
-                    Later on in the code, we start the recognition process with a simple "onclick" event listener.
+      <li class="bg-white">
+        <a href="https://www.w3.org/TR/jsgf/">
+        <img src="slides/jsgf/img/jsgf-w3c.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
 
-                    Since this requires a round-trip visit to the Cloud, we set up an "onresult" listener that fires once we receive the response.
+      <li class="bg-white">
+        <a href="https://www.w3.org/TR/jsgf/">
+        <img src="slides/jsgf/img/jsgf-w3c-intro.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
 
-                    As we learned earlier, there's quite a bit of AI heavy-lifting going on behind the scenes. But our end of the code shouldn't surprise anyone who has done even the slightest bit of event-driven JavaScript programming.
+      <li class="bg-white">
+        <a href="https://www.w3.org/TR/jsgf/">
+        <img src="slides/jsgf/img/jsgf-w3c-example.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
 
-                    To learn more about the various objects and function calls used in this example, do a web search on "MDN SpeechRecognition".
-                  </aside>
-                </section>
+      <li>
+        <h2 class="section-title">Amazon <span class="highlight">Alexa</span></h2>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://developer.amazon.com/alexa-skills-kit">
+        <img src="slides/alexa/img/alexa-skills-kit-home.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://github.com/alexa/skill-sample-nodejs-fact">
+        <img src="slides/alexa/img/alexa-github.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://developer.amazon.com/blogs/post/Tx3DVGG0K0TPUGQ/New-Alexa-Skills-Kit-Template:-Step-by-Step-Guide-to-Build-a-Fact-Skill">
+        <img src="slides/alexa/img/alexa-spacegeek-tutorial.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://github.com/alexa/skill-sample-nodejs-fact">
+        <img src="slides/alexa/img/interactionmodel.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://github.com/alexa/skill-sample-nodejs-fact">
+        <img src="slides/alexa/img/servicesimulator.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
 
 
 
 
+      <li>
+        <h2 class="section-title"><span class="highlight">Wrapping up...</span></h2>
+      </li>
 
-                <section>
-                  <a href="https://www.w3.org/TR/jsgf/"><img src="img/jsgf-w3c.png" alt=""></a>
+      <li class="bg-white">
+        <img src="slides/voice/img/backchannel-voice-is-big.png"
+             alt=""
+             class="full-height">
+      </li>
 
-                  <aside class="notes">
-                    When we set up our bounded grammar in this "color changer" example, we were, in fact, using a W3C spec called "The JSpeech Grammar Format", or "JSGF" for short.
+      <li>
+        <h2 class="section-title">Io<span class="highlight">(C)</span>T<br>
+          Internet of <span class="highlight">Conversational</span> Things
+        </h2>
+      </li>
 
-                    If you haven't read a W3C spec before (and I know that you haven't -- why would you lie to me after all that we've been through together?), I highly recommend that you give one a try. They tend to be far more readable than you might expect, and there are even the occasional joke or two sprinkled in.
+      <li class="bg-white">
+        <img src="slides/voice/img/gartner-voice-ui.png"
+             alt=""
+             class="full-height">
+      </li>
 
-                    At any rate, notice how long this spec has been in place. I love standards-based solutions over proprietary ones, and this standard has been in place for nearly 20 years. It might actually be older than you are. Given the fact that the first HTML spec was published in 1995, we can say that the JSGF spec is almost as old as the web itself.
-                  </aside>
-                </section>
+      <li class="bg-white">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">
+        <img src="slides/web-speech-api/img/mdn-web-speech-api.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
 
-                <section>
-                  <a href="https://www.w3.org/TR/jsgf/"><img src="img/jsgf-w3c-intro.png" alt=""></a>
-
-                  <aside class="notes">
-                    We've already discussed the difference between "constrained" and "unconstrained" speech recognition. By using JSGF, we are defining the "bounded grammar" for our application.
-
-                    Another important key word you'll see come up again and again is "utterance". This is what you're expecting your user to say -- things like "open a file" or "close the window".
-                  </aside>
-                </section>
-
-                <section>
-                  <a href="https://www.w3.org/TR/jsgf/"><img src="img/jsgf-w3c-example.png" alt=""></a>
-
-                  <aside class="notes">
-                    Here are a couple of examples of JSGF grammars. Notice that they can easily be combined to create more complex, sophisticated grammars.
-
-                    Grammar "Rules" are surrounded by angle brackets. In this example, "startPolite" and "endPolite" are two rules. Towards the bottom, you'll see several examples of composing rules out of other rules, like "basicCmd" and "command".
-
-                    Rules that contain an array of possible words use the vertical pipe symbol. (Programmers probably recognize this as the "or" symbol.) This is officially called defining a "set of alternatives".
-
-                    You can group a set of alternatives together using either round parentheses or square brackets. Square-bracketed alternatives are completely optional -- your user may or may not utter a single one of them. Similarly, the asterisk after the "startPolite" rule indicates that this utterance may be uttered zero or more times. (Using a plus sign instead of an asterisk means that you expect to hear the utterance at least one or more times.)
-
-                    In practice, this means that your user could say "open the window", or "open the window, thanks", or "please please please oh mighty computer could you kindly open the window". (See what I mean about the occasional joke in these specs?)
-                  </aside>
-                </section>
-
-
+      <li>
+        <h2>Libby Davis, School Report</h2>
+        <iframe width="300"
+                height="200"
+                src="https://www.youtube.com/embed/dFrxBYY2azo"
+                frameborder="0"
+                allowfullscreen></iframe>
+      </li>
 
 
-                <section>
-                  <a href="https://smile.amazon.com/Amazon-Echo-Bluetooth-Speaker-with-WiFi-Alexa/dp/B00X4WHP5E/ref=sr_1_1?ie=UTF8&qid=1484605178&sr=8-1&keywords=echo"><img src="img/amazon-echo-home.png" alt=""></a>
-
-                  <aside class="notes">
-                    In this final section, we get to what I think is one of the most exciting examples of a Conversational AI available today -- Amazon's Alexa. It is a pure Conversational UI, because there is no keyboard, and no screen -- just you, your voice, and your ears.
-
-                    While we're here, we should make an important distinction. "Alexa" is the voice interface -- the "agent", if you will. Alexa is available on a number of different Amazon hardware devices -- the "echo", the "dot", and the "tap" among others. But Amazon is aggressively licensing Alexa to other manufacturers, so you might hear her voice coming out of a refriderator or washing machine as well.
-
-                    But the reason I'm so excited about Alexa is how easy it is to give her new, custom capabilities. These new capabilities are called "Skills". For example, if you add the "Domino's Pizza skill", you can then say, "Alexa, ask Domino's to track my order". If you add the "Uber skill", you can then say, "Alexa, ask Uber to request a ride."
-
-                    I'll walk you through creating your own custom skill in just a moment.
-                  </aside>
-                </section>
-
-                <section>
-                  <a href="http://fortune.com/2015/06/25/amazon-alexa-fund/"><img src="img/amazon-echo-fortune.png" alt=""></a>
-
-                  <aside class="notes">
-                    Not only has Amazon created a well-documented software development kit that allows you to easily add your own skills to Alexa, they've also created an incubator fund to encourage people to think of clever ways to commercialize and monetize the new skills that they create.
-                  </aside>
-                </section>
-
-                <section>
-                  <p><a href="https://github.com/alexa/skill-sample-nodejs-fact">https://github.com/alexa/skill-sample-nodejs-fact</a></p>
-                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github.png" alt=""></a>
-
-                  <aside class="notes">
-                    Head over to "github dot com slash alexa slash skill dash sample dash node j s dash fact" to not only get a glimpse of what the source code looks like, but also to read their extensive, detailed readme file. It walks you through a step by step "copy and paste" example that will give you an early success in well under an hour. After that, you can expand upon the example or use it as a leaping off point for your own custom skill.
-                  </aside>
-                </section>
-
-                <section>
-                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-readme.png" alt=""></a>
-
-                  <aside class="notes">
-                    The Alexa skill you're about to create is called "SpaceGeek". SpaceGeek -- as the name implies -- offers up an interesting, spoken space-related fact upon request. All you have to do is ask. And, ironically, the name of the toolkit you'll use to implement this is called the "Alexa Skills Kit", or "Ask" for short. (Isn't that cute?)
-
-                    The source code is written in JavaScript, and uses Node J S. This example also offers an interesting glimpse into the capabilities of AWS Lambda.
-
-                    If you're not familiar with Amazon's Lambda service, it's a bit different than your typical web server that you want to be up and running 24 7. A Lambda service is request-based. When ask Alexa for a new SpaceGeek fact, Amazon will spin your Lambda service long enough to satisfy the request, and then shut it back down again. This ends up being a very clever and cost-effective way to implement your new Alexa skill. Of course, this isn't the only option you have. You can also have Alexa call out to any https URL.
-                  </aside>
-                </section>
-
-                <!-- Steps -->
-                <section>
-                  <h2>Step 1.</h2>
-                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-step01.png" alt=""></a>
-                </section>
-
-                <section>
-                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-step01b.png" alt=""></a>
-                </section>
-
-                <section>
-                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-step01c.png" alt=""></a>
-                </section>
-
-                <section>
-                  <h2>Step 2.</h2>
-                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-step02.png" alt=""></a>
-                </section>
-
-                <section>
-                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-step02b.png" alt=""></a>
-                </section>
-
-                <section>
-                  <h2>Step 3.</h2>
-                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-step03.png" alt=""></a>
-                </section>
-
-                <section>
-                  <h2>Step 4.</h2>
-                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-step04.png" alt=""></a>
-                </section>
-
-                <section>
-                  <a href="https://github.com/alexa/skill-sample-nodejs-fact"><img src="img/alexa-github-step04b.png" alt=""></a>
-                </section>
-                <!-- Steps -->
-
-                <section>
-                  <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c.png" alt=""></a>
-                </section>
-
-                <section>
-                  <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-intro.png" alt=""></a>
-                </section>
-
-                <!-- <section>
-                  <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-steps.png" alt=""></a>
-                </section>
-
-                <section>
-                  <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-step01.png" alt=""></a>
-                </section>
-
-                <section>
-                  <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-step03.png" alt=""></a>
-                </section>
-
-                <section>
-                  <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-step04.png" alt=""></a>
-                </section>
-
-                <section>
-                  <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-step05.png" alt=""></a>
-                </section> -->
-
-                <section>
-                  <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-example.png" alt=""></a>
-                </section>
-
-                <section>
-                  <a href="https://www.w3.org/TR/speech-synthesis/"><img src="img/ssml-w3c-example02.png" alt=""></a>
-                </section>
-
-                <section>
-                  <p><a href="https://github.com/mdn/web-speech-api/">https://github.com/mdn/web-speech-api/</a></p>
-                  <a href="https://github.com/mdn/web-speech-api/"><img src="img/mdn-web-speech-api-github.png" alt=""></a>
-                </section>
-
-                <section>
-                  <h2>Web Speech API</h2>
-                  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API"><img src="img/mdn-web-speech-api.png" alt=""></a>
-                </section>
-
-                <section>
-                  <a href="https://backchannel.com/voice-is-the-next-big-platform-and-alexa-will-own-it-c2cf13fab911#.a81t7r5cb"><img src="img/backchannel-voice-is-big.png" alt=""></a>
-                  <aside class="notes">
-                    Article on backchannel.com: "Voice Is the Next Big Platform, and Alexa Will Own It". The title of this article makes an important point -- 'Alexa' is the Voice UI; 'Echo' is simply one of many platforms Alexa is licensed to run on.
-                  </aside>
-                </section>
-
-                <section>
-                  <a href="https://www.gartner.com/doc/3021226/market-trends-voice-ui-consumer"><img src="img/gartner-voice-ui.png" alt=""></a>
-                </section>
-
-                <section>
-                  <h2>Libby Davis, School Report</h2>
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/dFrxBYY2azo" frameborder="0" allowfullscreen></iframe>
-                </section>
-
-                <section data-background-image="img/conversation-799448_1280.png"
-                         data-background-color="#ffffff">
-                  <div class="banner">
-                    <div class="title">
-                      <h1>Conversational UIs</h1>
-                      <h2>Talking to Siri, Alexa, and Your Web Browser</h2>
-                    </div>
-                    <div class="bio">
-                      Scott Davis <br>
-                      <a href="mailto:sdavis@thoughtworks.com">sdavis@thoughtworks.com</a> <br>
-                      <a href="https://twitter.com/scottdavis99?lang=en">@scottdavis99</a>
-                    </div>
-                  </div>
-                </section>
-
+      <li class="title-slide">
+          <div class="banner">
+            <div class="banner-title">
+              <h1>Conversational UIs</h1>
+              <h2>Talking to Siri, Alexa, and Your Web Browser</h2>
             </div>
-        </div>
-        <script src="bower_components/web-speech-api/speak-easy-synthesis/script.js"></script>
-        <script src="speech-color-changer.js"></script>
-        <script src="bower_components/reveal.js/js/reveal.js"></script>
-        <script>
-            Reveal.initialize({
-              // Display controls in the bottom right corner
-              controls: false,
+            <div class="banner-bio">
+              Scott Davis <br>
+              <a href="mailto:sdavis@thoughtworks.com">sdavis@thoughtworks.com</a> <br>
+              <a href="https://twitter.com/scottdavis99?lang=en">@scottdavis99</a>
+            </div>
+          </div>
+      </li>
 
-              // Display a presentation progress bar
-              progress: false,
 
-              // Push each slide change to the browser history
-              history: true,
 
-              // Transition style
-              transition: 'fade', // none/fade/slide/convex/concave/zoom
 
-              // Flags if speaker notes should be visible to all viewers
-              showNotes: false
-            });
-        </script>
-    </body>
+
+
+
+
+
+
+
+
+
+    </ol>
+
+
+    <script src="bower_components/talk-o-vision/talk-o-vision.js"></script>
+    <script src="bower_components/web-speech-api/speak-easy-synthesis/script.js"></script>
+    <script src="speech-color-changer.js"></script>
+  </body>
 </html>

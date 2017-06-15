@@ -17,6 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "talk-o-vision": "thirstyhead/talk-o-vision#^0.4.0"
+    "talk-o-vision": "thirstyhead/talk-o-vision#^0.4.0",
+    "web-speech-api": "mdn/web-speech-api"
   }
 }

@@ -15,6 +15,7 @@
         padding-top: 15%;
       }
 
+      /* Speech Synthesis */
       button{
         font-size: 2em;
       }
@@ -22,6 +23,39 @@
       code{
         font-size: 1rem;
       }
+
+      .sample-form {
+        background-color: #ccc;
+        color: black;
+      }
+
+      .sample-form p{
+        font-size: 0.75em;
+      }
+
+      .sample-form label{
+        font-size: 0.75em;
+      }
+
+      .sample-form input[type='text'] {
+        width: 85%;
+        height: 1.5em;
+        font-size: 1em;
+        /*font-style: italic;*/
+        color: blue;
+        word-spacing: 10px;
+      }
+
+      .sample-form select {
+        height: 1.5em;
+        font-size: 0.6em;
+      }
+
+      .speech-color-changer p{
+        font-size: 0.6em;
+      }
+      /* Speech Synthesis */
+
     </style>
 
     <script type="text/javascript">
@@ -64,6 +98,12 @@
         <img src="slides/voice/img/amazon-dash.png"
              alt=""
              class="full-height">
+      </li>
+
+      <li>
+        <h2 class="section-title">Io<span class="highlight">(C)</span>T<br>
+          Internet of <span class="highlight">Conversational</span> Things
+        </h2>
       </li>
 
       <li class="bg-white">
@@ -119,9 +159,38 @@ window.speechSynthesis.speak(msg);
         </code></pre>
 
         <button onclick="sayHello()">Say Hello</button>
-
       </li>
 
+      <li class="">
+        <h2>Speech synthesiser</h2>
+        <p>Original source:<br><a href="http://github.com/mdn/web-speech-api">http://github.com/mdn/web-speech-api</a></p>
+
+        <div class="sample-form">
+          <p>Enter some text in the input below and press return to hear it. Change voices using the dropdown menu.</p>
+
+          <form>
+          <input type="text"
+                 class="txt"
+                 value="hello world"/>
+
+          <div>
+            <select>
+
+            </select>
+          </div>
+
+          <div style="display: inline-block">
+            <label for="rate">Rate:</label><input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
+            <div class="rate-value">1</div>
+          </div>
+          <div style="display: inline-block">
+            <label for="pitch">Pitch:</label><input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
+            <div class="pitch-value">1</div>
+          </div>
+
+          </form>
+        </div>
+      </li>
 
 
 
@@ -131,5 +200,7 @@ window.speechSynthesis.speak(msg);
 
 
     <script src="bower_components/talk-o-vision/talk-o-vision.js"></script>
+    <script src="bower_components/web-speech-api/speak-easy-synthesis/script.js"></script>
+
   </body>
 </html>

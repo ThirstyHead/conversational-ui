@@ -1,0 +1,14 @@
+{
+  "name": "web-speech-api",
+  "homepage": "https://github.com/mdn/web-speech-api",
+  "_release": "ce7916f8b6",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "ce7916f8b68c0afbfd186297393a04ec00e91cbc"
+  },
+  "_source": "https://github.com/mdn/web-speech-api.git",
+  "_target": "*",
+  "_originalSource": "mdn/web-speech-api",
+  "_direct": true
+}

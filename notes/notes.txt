@@ -1,0 +1,115 @@
+Let me play you a quick video that Apple has released promoting their conversational ui:
+
+Did you notice anything strange about it? Like, the fact that it was released in 1987?
+
+"Conversational UI" is a fairly broad, poorly defined term.
+
+Some folks think it means this: (Wargames)
+
+While that's pretty cool (by 1983 standards),  it is really just typing and text-to-speech, right?
+
+Demo text-to-speech in the Browser
+
+There was a time when computers didn't ship with sound cards. When you installed a SoundBlaster card, you got Dr. Zvago
+
+Folks were in a rush to call that "Artificial Intelligence", when in fact is splitting words based on white space and applying some rudimentary grammatical rules to find the subject (or noun) of the sentence and repeating it back.
+
+If you are interested in writing chatbots for Slack, Twitter, Facebook, etc., start with this basic recipe:
+1. split string input on space
+2. pattern match for interesting keywords
+3. call corresponding function
+
+Congratulations! You have just reinvented the DOS prompt from 1979. (Or the Unix prompt. Or the...)
+
+As far as I'm concerned, in order to qualify as Artificial Intelligence, it would have to:
+1. Initiate a conversation (as opposed to responding)
+2. Provide a contextual response beyond keyword matching, like "It looks like you are trying to get a listing of all files in this directory. Can I help?"
+
+Congratulations! You have just reinvented Clippy from 20xx. (This certainly caused me to shout at my computer, but it was hardly a conversational ui)
+
+We are in the early days of mainstream Conversational UIs, but I think that we will ultimately be used to describe talking to your computer in a way different than (or complementary to)
+
+Text-based UI (command line, chatbots, et al)
+Graphical UI (buttons, icons, menus)
+Conversational UI (voice interaction)
+
+Just as GUIs have evolved from tabbing around graphical elements with a keyboard, to clicking / dragging / lassoing with a mouse, to tapping / swiping / stretching with your fingers
+
+Conversational UIs will require Speech-to-Text, tonal analysis, and eventually sentiment analysis to detect sarcasm, irony, etc.
+
+Chinese for tonal analysis (e.g. Mother/Horse)
+
+Sarcasm will be especially tough, because you say the opposite of what you actually mean, and expect the listener to reverse the meaning of your words based on your tone of voice or the context of the conversation.
+
+
+
+Speech-to-text is devilishly difficult, and currently requires either cloud access or proprietary software that requires specialized training to learn your voice.
+
+Dragon naturally speak
+
+So, why is Speech-to-Text asymmetrically harder than Text-to-Speech?
+
+
+
+
+
+
+
+
+
+
+
+
+
+Parsing is harder
+Accents
+Synonyms / Slang - different words that mean the same thing
+Homonyms - words that have the same pronunciation, but different meanings
+
+
+Parsing: We talk in a continuous stream. Rather. Than. Pausing. Between. Each. Word.
+
+And how about singing?
+
+And how about sentence fragments?
+
+Accents: India has over 1,000 spoken languages. The US has English (although spanish projections), but several major regional dialects.
+
+Midwest
+Eastern
+Southern
+Northern (Canadian)
+
+Synonyms: In addition to regional pronunciations, they use different words for the same thing.
+
+Soda / Pop
+(In atlanta, everything is Coke)
+
+Sandwich
+Hero
+Hoagie
+Submarine sandwich
+Poor boy
+
+And this is all in the same country, right? Don't get me started with pants and knickers.
+
+So, yes -- english is a hot mess. An ambiguous, hot mess.
+
+But wait, there's more!
+
+How about homonyms -- words that sound the same, but mean completely differnet things.
+
+
+
+
+
+
+
+
+
+
+siri 2011
+spun off from SRI
+acquired by Apple
+
+Twillio

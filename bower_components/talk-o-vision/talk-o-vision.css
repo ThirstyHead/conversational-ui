@@ -1,0 +1,236 @@
+html, body{
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 1.75em;
+}
+
+aside{
+  display: none;
+}
+
+code{
+  width: 75%;
+  text-align: left;
+  display: inline-block;
+  padding: 0.5rem;
+  background-color: white;
+  color: black;
+  font-family: monospace;
+  overflow: scroll;
+}
+
+h1, h2, h3, h4, h5, h6{
+  padding: 1rem 0 0 0;
+}
+
+h1 + img{
+  max-height: 65%;
+}
+
+h2 + img{
+  max-height: 75%;
+  padding: 0.5rem;
+}
+
+iframe{
+  border: none;
+  width: 100vw;
+  height: 100vh;
+}
+
+img{
+  max-width: 100%;
+}
+
+p{
+  width: 75%;
+  text-align: center;
+  padding-left: 12%;
+}
+
+table th, table td {
+    text-align: left;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    /*border-bottom: 1px solid;*/
+}
+table {
+    margin: auto;
+    padding-left: 20%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+ul{
+  width: 75%;
+  text-align: left;
+  display: inline-block;
+}
+
+ul > li{
+  list-style: disc;
+  color: white;
+}
+
+
+/*****************
+  Custom styles
+*****************/
+
+/* title slide */
+.title-slide{
+  /*background: url('slides/title/img/cloud-1.jpg') no-repeat center center;*/
+  background-size: contain;
+}
+
+.banner {
+  background-color: black;
+  opacity: 0.7;
+  width: 100%;
+}
+
+.banner-title {
+  font-size: 1em;
+  text-align: left;
+  padding: 0.5em;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.banner-title h1 {
+  font-size: 1.5em;
+  text-transform: none;
+  font-weight: bold;
+  margin: 0;
+}
+
+.banner-title h2 {
+  font-size: 1em;
+  text-transform: none;
+  font-style: italic;
+  margin: 0;
+}
+
+.banner-bio {
+  font-size: 0.5em;
+  text-align: right;
+  padding-right: 20%;
+  padding-bottom: 1em;
+}
+
+.banner-bio a{
+  color: white;
+}
+/* title slide */
+
+
+
+
+.bg-white{
+  color: black;
+  background-color: white;
+}
+
+.bg-white li{
+  color: black;
+}
+
+.full-height{
+  height: 100vh;
+  /*width: 100vw;*/
+}
+
+.full-width{
+  /*height: 100vh;*/
+  width: 100vw;
+}
+
+.highlight{
+  color: yellow;
+}
+
+.section-title{
+  position: relative;
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
+}
+
+.side-by-side{
+  float: left;
+  width: 45%;
+  padding-left: 2.5%;
+}
+
+.slideshow{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow > li{
+  width: 100vw;
+  height: 100vh;
+  page-break-after: always;
+}
+
+.slide{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.slide + img{
+  /* NOTE: setting width misbehaves on Chrome, Firefox */
+  /*width: 100vw;*/
+  height: 100vh;
+}
+
+.slide ol{
+  width: 75%;
+  text-align: left;
+  display: inline-block;
+}
+
+.slide pre{
+  width: 100%;
+  max-width: 100%;
+}
+
+.slide code{
+  max-width: 100%;
+}
+
+
+.slide-img{
+  max-width: 100%;
+}
+
+
+
+
+
+
+
+
+/*
+.partial-height{
+  height: 75%;
+  max-height: 75%;
+}
+
+.half-img{
+  max-width: 75%;
+  margin-top: 1rem;
+}
+
+.top-margin{
+  margin-top: 1rem;
+}
+
+.sub-title{
+  margin: 0;
+  margin-top: -2rem;
+}
+*/

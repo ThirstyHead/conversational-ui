@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,
+                                   minimum-scale=1,
+                                   initial-scale=1,
+                                   user-scalable=yes">
+    <title>Talk-o-Vision Demo</title>
+    <link rel="stylesheet" href="bower_components/talk-o-vision/talk-o-vision.css">
+    <style>
+      .title-slide{
+        background: url('slides/title/img/BlooShooes.jpg') no-repeat center center;
+        background-size: contain;
+      }
+
+
+      .bg-white code{
+        background-color: black;
+        color: white;
+      }
+
+      .bg-white .highlight{
+        color: red;
+      }
+
+
+      .slide-with-notes{
+        display: flex;
+        flex-flow: row;
+      }
+
+      .slide-with-notes section{
+        flex-basis: 50%;
+        display: block;
+      }
+
+      .slide-with-notes aside{
+        flex-basis: 50%;
+        display: block;
+        font-size: 1rem;
+        text-align: left;
+        overflow: scroll;
+      }
+
+      .slide-with-notes aside p{
+        font-size: 1rem;
+        text-align: left;
+      }
+
+      .slide-with-notes code{
+        font-size: 0.75rem;
+      }
+
+
+    </style>
+  </head>
+
+  <body>
+    <ol class="slideshow">
+      <li class="title-slide">
+          <div class="banner">
+            <div class="banner-title">
+              <h1>Talk-o-Vision</h1>
+              <h2>HTML5-based Slides</h2>
+            </div>
+            <div class="banner-bio">
+              Scott Davis <br>
+              <a href="mailto:sdavis@thoughtworks.com">sdavis@thoughtworks.com</a> <br>
+              <a href="https://twitter.com/scottdavis99?lang=en">@scottdavis99</a>
+            </div>
+          </div>
+      </li>
+
+      <li>
+        <section>
+          <h2>Settings</h2>
+          <p>To toggle fullscreen on / off, press <span class="highlight">f</span>.</p>
+
+          <p>To toggle notes on / off, press <span class="highlight">n</span>.</p>
+        </section>
+
+        <aside>
+          <p>If you can see me, you are viewing the notes.</p>
+          <p>To toggle notes on / off, press <span class="highlight">n</span>.</p>
+        </aside>
+
+      </li>
+
+      <li class="bg-white">
+        <section>
+          <img src="slides/bio/img/scott-davis-bio.png"
+               alt="Scott Davis' Biography"
+               class="xfull-height">
+        </section>
+
+        <aside>
+          <p>Hi! My name is Scott Davis. I'm currently a Principle Engineer with ThoughtWorks. Before that, I ran a software consultancy out of Denver for a decade called ThirstyHead. </p>
+
+          <p>I've been writing about web development for years -- articles for IBM, books for O'Reilly and the Pragmatic Bookshelf, and most recently videos for O'Reilly as well.</p>
+
+          <p>I've been doing web development since the very beginning. I remember spending my hard-earned money on a Netscape Navigator license back in 1996, and no matter how hard I've tried to get a refund in the intervening years, I'm pretty sure that I'm never going to see that $19.99 again...</p>
+        </aside>
+      </li>
+
+      <!-- NOTE: need to revisit iframe feature later -->
+      <!-- <li>
+        <iframe src="bio/"></iframe>
+      </li> -->
+
+      <li>
+        <section>
+          <h2>Outline</h2>
+          <ul>
+            <li>We'll cover this</li>
+            <li>and this</li>
+            <li>and this other thing, too</li>
+          </ul>
+
+          <br><br>
+
+          <ol>
+            <li>We'll do this first</li>
+            <li>next, this</li>
+            <li>and finally, this other thing, too</li>
+          </ol>
+
+        </section>
+
+        <aside>
+          <p>Bulleted lists are exactly what you'd expect 'em to be as a web developer -- a simple <span class="highlight">&lt;ul&gt;</span> with some <span class="highlight">&lt;li&gt;</span>s.</p>
+
+          <p>Of course, ordered lists (<span class="highlight">&lt;ol&gt;</span>) are supported as well if you'd like to see numbers instead of bullets.</p>
+        </aside>
+      </li>
+
+      <li>
+        <section>
+          <h2>Here's a code example</h2>
+          <pre><code>
+let message = "JavaScript is cool!";
+String.prototype.shout = function(){
+  return this.toUpperCase();
+}
+console.log(message.shout());
+          </code></pre>
+        </section>
+
+        <aside>
+          <p>To display a code snippet, wrap it in a set of <span class="highlight">&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</span> elements.</p>
+        </aside>
+      </li>
+
+      <li class="bg-white">
+        <section>
+          <h2>Here's a code example</h2>
+          <pre><code>
+let message = "JavaScript is cool!";
+String.prototype.shout = function(){
+  return this.toUpperCase();
+}
+console.log(message.shout());
+          </code></pre>
+        </section>
+
+        <aside>
+          <p>If you'd like to invert the color of the slide, type <span class="highlight">&lt;li class="bg-white"&gt;</span></p>
+
+          <p>To display a code snippet, wrap it in a set of <span class="highlight">&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</span> elements.</p>
+        </aside>
+      </li>
+
+
+
+      <li>
+        <section>
+          <h2>Here's an image</h2>
+          <img src="slides/shoes/img/shoes.jpg"
+               alt="shoes"
+               data-original="https://morguefile.com/p/23395">
+        </section>
+
+        <aside>
+          <p>You can add an image by using the <span class="highlight">&lt;img&gt;</span> element. Don't forget to add an alternate text description using the <span class="highlight">alt</span> attribute -- your sight-impaired audience using a screen reader will appreciate it.</p>
+
+          <p>I recommend using 1024x768 sized images, but talk-o-vision does its best to right-size the images.</p>
+
+          <p>I recommend citing the original source of the image with a <span class="highlight">data-original</span> attribute.</p>
+        </aside>
+      </li>
+
+      <li class="bg-white">
+        <h2>Here's a white background</h2>
+        <img src="slides/shoes/img/shoes2.jpg"
+             alt="another pair of shoes"
+             data-original="https://morguefile.com/p/23398">
+      </li>
+
+      <li>
+        <h2>Here's an example with <span class="highlight">highlighting</span></h2>
+
+        <p>Use this <span class="highlight">sparingly</span>, of course...</p>
+      </li>
+
+
+
+
+
+
+      <li>
+        <h2 class="section-title"><span class="highlight">Side-by-side</span> examples</h2>
+      </li>
+
+      <li>
+        <h2>Side-by-side</h2>
+        <div class="side-by-side">
+          <ul>
+            <li>I'm</li>
+            <li>on</li>
+            <li>the</li>
+            <li class="highlight">left</li>
+          </ul>
+        </div>
+
+        <div class="side-by-side">
+          <ul>
+            <li>I'm</li>
+            <li>on</li>
+            <li>the</li>
+            <li class="highlight">right</li>
+          </ul>
+        </div>
+
+        <div class="side-by-side">
+          I'm a paragraph on the left side. I'm a paragraph on the left side.
+          I'm a paragraph on the left side. I'm a paragraph on the left side.
+        </div>
+
+        <div class="side-by-side">
+          I'm a paragraph on the right side. I'm a paragraph on the right side.
+          I'm a paragraph on the right side. I'm a paragraph on the right side.
+        </div>
+      </li>
+
+      <li>
+        <h2>Side-by-side images</h2>
+
+        <div class="side-by-side">
+          <img src="slides/title/img/BlooShooes.jpg"
+               alt="Blue Shoes"
+               class="slide-img"
+               data-original="https://morguefile.com/p/936834">
+        </div>
+
+        <div class="side-by-side">
+          <img src="slides/shoes/img/shoes2.jpg"
+               alt="another pair of shoes"
+               class="slide-img"
+               data-original="https://morguefile.com/p/23398">
+        </div>
+      </li>
+
+
+      <li>
+        <h2 class="section-title"><span class="highlight">Fin</span></h2>
+      </li>
+
+
+    </ol>
+
+
+  <script src="bower_components/talk-o-vision/talk-o-vision.js" charset="utf-8"></script>
+  </body>
+</html>

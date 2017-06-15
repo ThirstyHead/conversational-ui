@@ -14,7 +14,23 @@
       .banner-title{
         padding-top: 15%;
       }
+
+      button{
+        font-size: 2em;
+      }
+
+      code{
+        font-size: 1rem;
+      }
     </style>
+
+    <script type="text/javascript">
+      function sayHello(){
+        var msg = new SpeechSynthesisUtterance('Hello World');
+        window.speechSynthesis.speak(msg);
+      }
+    </script>
+
   </head>
   <body>
     <ol class="slideshow">
@@ -70,6 +86,42 @@
              class="">
         </a>
       </li>
+
+      <li class="bg-white">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">
+        <img src="slides/web-speech-api/img/mdn-web-speech-api.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">
+        <img src="slides/web-speech-api/img/mdn-web-speech-api-github.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <a href="http://caniuse.com/#feat=speech-synthesis">
+        <img src="slides/web-speech-api/img/caniuse-speech-synthesis-api.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="">
+        <p>&nbsp;</p>
+        <pre><code>
+let msg = new SpeechSynthesisUtterance('Hello World');
+window.speechSynthesis.speak(msg);
+        </code></pre>
+
+        <button onclick="sayHello()">Say Hello</button>
+
+      </li>
+
 
 
 

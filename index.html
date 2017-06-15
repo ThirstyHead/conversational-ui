@@ -56,6 +56,10 @@
       }
       /* Speech Synthesis */
 
+      iframe{
+        max-height: 75%;
+      }
+
     </style>
 
     <script type="text/javascript">
@@ -271,8 +275,206 @@ window.speechSynthesis.speak(msg);
 
       <li>
         <h2>Live Speech-to-Text Demo</h2>
-        <a href="https://www.google.com/intl/en/chrome/demos/speech.html">https://www.google.com/intl/en/<br>chrome/demos/speech.html</a>
+        <a href="https://www.google.com/intl/en/chrome/demos/speech.html"><span class="highlight">https://www.google.com/intl/en/<br>chrome/demos/speech.html</span></a>
       </li>
+
+      <li>
+        <a href="http://caniuse.com/#feat=speech-recognition">
+        <img src="slides/web-speech-api/img/caniuse-speech-recognition-api.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">
+        <img src="slides/web-speech-api/img/mdn-web-speech-api-github.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <h2>Speech color changer</h2>
+        <p>Original source:<br><a href="http://github.com/mdn/web-speech-api">http://github.com/mdn/web-speech-api</a></p>
+
+        <button onclick="sayColor()" id="color-button">Click to Change Color</button>
+
+        <div class="speech-color-changer">
+          <p class="hints"></p>
+          <div>
+              <p class="output"><em>...diagnostic messages</em></p>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <h2>Interesting Source Code</h2>
+        <pre><code>
+var colors = [ 'aqua', 'azure', 'beige']; //snip
+var grammar = '#JSGF V1.0; grammar colors; public <color> = ' +
+    colors.join(' | ') + ' ;'
+
+var recognition = new SpeechRecognition();
+var speechRecognitionList = new SpeechGrammarList();
+speechRecognitionList.addFromString(grammar, 1);
+recognition.grammars = speechRecognitionList;
+        </code></pre>
+      </li>
+
+      <li>
+        <h2>More Interesting Source Code</h2>
+        <pre><code>
+button.onclick = function() {
+  recognition.start();
+  console.log('Ready to receive a color command.');
+}
+
+recognition.onresult = function(event) {
+  var last = event.results.length - 1;
+  var color = event.results[last][0].transcript;
+
+  diagnostic.textContent = 'Result received: ' + color + '.';
+  bg.style.backgroundColor = color;
+  console.log('Confidence: ' +
+              event.results[0][0].confidence);
+}
+        </code></pre>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://www.w3.org/TR/jsgf/">
+        <img src="slides/jsgf/img/jsgf-w3c.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://www.w3.org/TR/jsgf/">
+        <img src="slides/jsgf/img/jsgf-w3c-intro.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://www.w3.org/TR/jsgf/">
+        <img src="slides/jsgf/img/jsgf-w3c-example.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li>
+        <h2 class="section-title">Amazon <span class="highlight">Alexa</span></h2>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://developer.amazon.com/alexa-skills-kit">
+        <img src="slides/alexa/img/alexa-skills-kit-home.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://github.com/alexa/skill-sample-nodejs-fact">
+        <img src="slides/alexa/img/alexa-github.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://developer.amazon.com/blogs/post/Tx3DVGG0K0TPUGQ/New-Alexa-Skills-Kit-Template:-Step-by-Step-Guide-to-Build-a-Fact-Skill">
+        <img src="slides/alexa/img/alexa-spacegeek-tutorial.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://github.com/alexa/skill-sample-nodejs-fact">
+        <img src="slides/alexa/img/interactionmodel.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://github.com/alexa/skill-sample-nodejs-fact">
+        <img src="slides/alexa/img/servicesimulator.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+
+
+
+      <li>
+        <h2 class="section-title"><span class="highlight">Wrapping up...</span></h2>
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/voice/img/backchannel-voice-is-big.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li>
+        <h2 class="section-title">Io<span class="highlight">(C)</span>T<br>
+          Internet of <span class="highlight">Conversational</span> Things
+        </h2>
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/voice/img/gartner-voice-ui.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">
+        <img src="slides/web-speech-api/img/mdn-web-speech-api.png"
+             alt=""
+             class="full-height">
+        </a>
+      </li>
+
+      <li>
+        <h2>Libby Davis, School Report</h2>
+        <iframe width="300"
+                height="200"
+                src="https://www.youtube.com/embed/dFrxBYY2azo"
+                frameborder="0"
+                allowfullscreen></iframe>
+      </li>
+
+
+      <li class="title-slide">
+          <div class="banner">
+            <div class="banner-title">
+              <h1>Conversational UIs</h1>
+              <h2>Talking to Siri, Alexa, and Your Web Browser</h2>
+            </div>
+            <div class="banner-bio">
+              Scott Davis <br>
+              <a href="mailto:sdavis@thoughtworks.com">sdavis@thoughtworks.com</a> <br>
+              <a href="https://twitter.com/scottdavis99?lang=en">@scottdavis99</a>
+            </div>
+          </div>
+      </li>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -282,6 +484,6 @@ window.speechSynthesis.speak(msg);
 
     <script src="bower_components/talk-o-vision/talk-o-vision.js"></script>
     <script src="bower_components/web-speech-api/speak-easy-synthesis/script.js"></script>
-
+    <script src="speech-color-changer.js"></script>
   </body>
 </html>
